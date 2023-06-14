@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+ <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+ <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+ <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+ <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Reyhan Dede</title>
+
+
+
+		<style>
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			#particles-js
+			{
+				width:100%;
+				height: 100vh;
+				background-image: url("");
+				position: relative;
+				bottom: 0%;
+
+			}
+
+			h2
+			{
+				position: absolute;
+				top:30%;
+				left:10%;
+				right: 10%;
+				text-align: center;
+				font-size: larger;
+
+
+			}
+
+
+			h6
+			{
+				position: absolute;
+				top:40%;
+				left:10%;
+				right: 10%;
+                font-size: large;
+
+			}
+
+		</style>
+
+	
+
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="Logo.png">
+
+		<!-- Google Webfont -->
+		<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Icomoon Icons -->
+		<link rel="stylesheet" href="css/icomoon-icons.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Easy Responsive Tabs -->
+		<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+		<!-- Theme Style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/about.css">
+
+
+	
+
+
+
+	</head>
+	<body>
+		
+		
+		 <header id="fh5co-header" role="banner">
+			<!-- Logo -->
+
+		<div>
+				<section class="hero-section">
+	
+						<!-- Logo -->
+							
+							<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							
+			   <!-- Main Nav -->
+				<!-- Start Nav Section -->
+			<nav id="navbar" class="navbar">
+			<ul class="nav-menu" >
+				<li>
+				<a data-scroll="home" href="index.html" class="dot ">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="about" href="about.html" class="dot">
+					<span>About me</span>
+				</a>
+				</li>
+				<li>
+					<a data-scroll="services" href="project.html" class="dot active">
+						<span>Projects</span>
+					</a>
+				</li>
+
+				<li>
+				<a data-scroll="contact" href="contact.html" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+			</nav>
+			   <!-- Main Nav -->
+			   </section>
+
+			</div>
+		
+	</header>
+
+
+		<main role="main">
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+		<!-- Start Intro -->
+		<div class="container text-center">
+			<h4>DETECTION OF CYBERBULLYING TWEETS</h4>
+		</div>
+			<!-- End Intro -->
+		<!-- Text -->
+		<div class="container">
+		<div class="col-md-12-center">
+		<p>Detection of cyberbullying tweets with natural language processing (NLP) methods.</p>
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+<p>Required libraries are imported.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+#from sklearn.model_selection import cross_validate,GridSearchCV
+from sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizer
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score,recall_score,f1_score
+from sklearn.model_selection import train_test_split
+import tkinter as tk
+from tkinter import filedialog
+from tkinter import ttk
+import customtkinter
+from tkinter.ttk import Combobox
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+<p>Code snippet written in Python using the Tkinter library. It creates a window with a title “C T C” and sets its size to 800x600. The window background color is set to ‘#141316’. A frame is created using the customtkinter.CTkFrame class with a width of 700, height of 500, corner radius of 10 and foreground color of “#1d1d20”. The frame is placed at the center of the window. </p>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>window=tk.Tk()
+window.title("C T C")
+window.geometry("800x600")
+#customtkinter.set_appearance_mode("Dark")
+window.configure(bg='#141316')
+
+frame_1 = customtkinter.CTkFrame(master=window,
+                               width=700,
+                               height=500,
+                               corner_radius=10,fg_color=("#1d1d20"))
+frame_1.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>The function select_file uses the askopenfilename method from the tk.filedialog module to open a file dialog and allow the user to select a file. The selected file path is stored in the variable path_file. The function then uses the read_csv method from the pandas library to read the contents of the selected file into a DataFrame and stores it in the global variable df. </p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def select_file():
+    global df
+    path_file = tk.filedialog.askopenfilename()
+    df = pd.read_csv(path_file)
+    return df
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>Code creates a Label widget in the window using the tk.Label class.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>label=tk.Label(master=window,text="Cyberbullying Tweets Classification",fg="white",bg="#1d1d20",font="Times 22 bold")
+label.pack()
+label.place(x=165,y=100)</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Code creates a button widget in the frame_1 using the customtkinter.CTkButton class.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>
+b1=customtkinter.CTkButton(master=frame_1, text="Select File", command=select_file,fg_color=("dodgerblue", "darkslateblue"),text_color="white",width=120,height=50,border_width=3,corner_radius=9)
+b1.place(relx=0.17, rely=0.7, anchor=tk.CENTER)
+</code></pre>
+</div>
+</div>
+<p>Code creates a StringVar variable named variable_1 and sets its value to “Features Model Select”. It then creates a list of values ["TF-IDF", "Bag of Words"] and assigns it to the variable values_1. A Combobox widget is created in frame_1 using the Combobox class.</p>				
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>variable_1 = tk.StringVar()
+variable_1.set("Features Model Select")
+values_1 = ["TF-IDF", "Bag of Words"]
+combobox_1 = Combobox(
+    master=frame_1,
+    textvariable=variable_1,
+    values=values_1,
+    font="Times 15 bold"
+)
+combobox_1.pack()
+combobox_1.place(x=65,y=140)
+</code></pre>
+</div>
+</div>
+<p>Code creates a StringVar variable named variable_2 and sets its value to “Machine Model Select”. It then creates a list of values ["KNeighborsClassifier","GaussianNB","MultinomialNB","DecisionTreeClassifier","SVM"] and assigns it to the variable values_2. A Combobox widget is created in frame_1 using the Combobox class.</p>		
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>variable_2 = tk.StringVar()
+variable_2.set("Machine Model Select")
+values_2 = ["KNeighborsClassifier","GaussianNB","MultinomialNB","DecisionTreeClassifier","SVM"]
+combobox_2 = Combobox(
+    master=frame_1,
+    textvariable=variable_2,
+    values=values_2,
+    font="Times 15 bold"
+)
+combobox_2.pack()
+combobox_2.place(x=65,y=220)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>The function change uses the get method of the combobox_1 and combobox_2 widgets to retrieve their current values and assigns them to the global variables vFeatures and vMachines, respectively. </p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def change():
+    global vFeatures
+    global vMachines
+    vFeatures=combobox_1.get()
+    print(vFeatures)
+    vMachines= combobox_2.get()
+    print(vMachines)
+    return vFeatures,vMachines
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code creates a button widget in the frame_1 using the customtkinter.CTkButton class. The button displays the text “Start” and is configured to call the change function when clicked.</p>
+<p>The code then binds an event handler to the <<ComboboxSelected>> event of combobox_1. When this event is triggered, the change function is called.
+Finally, the code calls the mainloop method of the window object to start the Tkinter main event loop.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>b2=customtkinter.CTkButton(master=frame_1, text="Start", command=change,fg_color=("Red", "darkslateblue"),text_color="white",width=120,height=50,border_width=3,corner_radius=9)
+b2.place(relx=0.4, rely=0.7, anchor=tk.CENTER)
+
+combobox_1.bind("<<ComboboxSelected>>", lambda event: change())
+
+window.mainloop()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def check_df(dataframe, head=5):
+    print("##################### Shape #####################")
+    print(dataframe.shape)
+    print("##################### Types #####################")
+    print(dataframe.dtypes)
+    print("##################### Head #####################")
+    print(dataframe.head(head))
+    print("##################### Tail #####################")
+    print(dataframe.tail(head))
+    print("##################### NA #####################")
+    print(dataframe.isnull().sum())
+
+check_df(df)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df['cyberbullying_type'].value_counts()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>colors_palet = ['#78C850',  # Grass
+                    '#F08030',  # Fire
+                    '#6890F0',  # Water
+                    '#A8B820',  # Bug
+                    '#A8A878',  # Normal
+                    '#A040A0',  # Poison
+                    '#F8D030',  # Electric
+                    '#E0C068',  # Ground
+                    '#EE99AC',  # Fairy
+                    '#C03028',  # Fighting
+                    '#F85888',  # Psychic
+                    '#B8A038',  # Rock
+                    '#705898',  # Ghost
+                    '#98D8D8',  # Ice
+                    '#7038F8',  # Dragon
+]              
+plt.figure(figsize=(14,6))
+sns.countplot(x='cyberbullying_type', data=df, palette=colors_palet)
+plt.show()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/t1.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<p>The function label_encoder takes two arguments: dataframe and binary_col. The function creates an instance of the LabelEncoder class and assigns it to the variable labelencoder. It then uses the fit_transform method of the labelencoder object to encode the values in the column specified by binary_col of the dataframe argument. The encoded values are assigned back to the same column of the dataframe. The function returns the modified dataframe.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def label_encoder(dataframe, binary_col):
+    labelencoder = LabelEncoder()
+    dataframe[binary_col] = labelencoder.fit_transform(dataframe[binary_col])
+    return dataframe
+df=label_encoder(df,"cyberbullying_type")
+df
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/t2.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<p>Code creates a list of English stop words using the words method of the stopwords object and assigns it to the variable stop_words. It then applies a lambda function to the 'tweet_text' column of the df DataFrame. The lambda function takes a string x as input, splits it into a list of words (using the split method), converts all words to lowercase (using the lower method), filters out any words that are in the stop_words list (using a list comprehension), and joins the remaining words back into a string (using the join method). The resulting string is returned by the lambda function and assigned back to the 'tweet_text' column of the df DataFrame.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+
+stop_words = stopwords.words('english')
+df['tweet_text'] = df['tweet_text'].apply(lambda x: ' '.join([word for word in x.lower().split() if word not in (stop_words)
+</code></pre>
+</div>
+</div>			
+
+<p>The function features_model takes one argument: vFeatures. The function checks if the value of vFeatures is equal to “TF-IDF”. If it is, the function creates an instance of the TfidfVectorizer class with max_features set to 5000 and ngram_range set to (1, 3), and assigns it to the variable tfidf_v. It then uses the fit_transform method of the tfidf_v object to transform the 'tweet_text' column of the df DataFrame into a TF-IDF feature matrix. The resulting matrix is converted to a NumPy array (using the toarray method) and assigned to the variable X. The 'cyberbullying_type' column of the df DataFrame is assigned to the variable y.
+If the value of vFeatures is not equal to “TF-IDF”, the function creates an instance of the CountVectorizer class with max_features set to 1500 and ngram_range set to (1, 3), and assigns it to the variable cv. It then uses the fit_transform method of the cv object to transform the 'tweet_text' column of the df DataFrame into a bag-of-words feature matrix. The resulting matrix is converted to a NumPy array (using the toarray method) and assigned to the variable X. The last column of the df DataFrame is assigned to the variable y.</p>
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def features_model(vFeatures):
+    if vFeatures == "TF-IDF":
+        tfidf_v=TfidfVectorizer(max_features=5000,ngram_range=(1,3))
+        X=tfidf_v.fit_transform(df['tweet_text']).toarray()
+        y=df['cyberbullying_type']
+        
+    else:
+        cv = CountVectorizer(max_features = 1500,ngram_range=(1,3))
+        X = cv.fit_transform(df['tweet_text']).toarray()#df['tweet_text']
+        y = df.iloc[:, -1].values
+    return X,y
+X,y=features_model(vFeatures)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>The data is divided into training and test data.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>The function score takes one argument: classifier. The function calls the fit method of the classifier object with arguments X_train and y_train to train the classifier on the training data. It then uses the predict method of the classifier object to make predictions on the test data X_test, and assigns the predicted values to the variable y1_pred. The function then calculates the accuracy, recall, and F1 score of the classifier using the accuracy_score, recall_score, and f1_score functions from the sklearn.metrics module, respectively. The calculated scores are assigned to variables accuracy, recall, and f1, respectively.</p>
+<p>Finally, the plot is displayed using the show method of the plt object.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def score(classifier):
+    classifier.fit(X_train, y_train)
+    y1_pred = classifier.predict(X_test)
+    accuracy= accuracy_score(y_test, y1_pred)
+    recall=recall_score(y_test, y1_pred,average='macro')
+    f1=f1_score(y_test, y1_pred,average='macro')
+
+    x=["accuracy_score","recall_score","f1_score"]
+    y=[accuracy,recall,f1]
+
+    plt.figure(figsize=(14,6))
+    sns.barplot(x,y).set_title(classifier)
+    plt.show()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/t3.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def Machine_Model(vMachines):
+    print(vMachines)
+    if vMachines=="KNeighborsClassifier":
+        classifier = KNeighborsClassifier()
+        score(classifier)
+    elif vMachines=="GaussianNB":
+        classifier = GaussianNB()
+        score(classifier)
+    elif vMachines=="MultinomialNB":
+        classifier = GaussianNB()
+        score(classifier)
+    elif vMachines=="DecisionTreeClassifier":
+        classifier =DecisionTreeClassifier()
+        score(classifier)
+        
+    else:
+        classifier =SVC()
+        score(classifier)
+        
+Machine_Model(vMachines)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/t4.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+
+<div class="col-md-12" align="right"><a href="https://github.com/Reyhandede/Cyberbullying-Tweets/blob/main/WebMining.ipynb" target="_blank">GitHub</a></div>
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+		<div id="fh5co-work">
+					<div class="col-md-6 col-sm-6 col-xs-6" align="left">
+						<a href="post_ds10.html" target="_self" >&#171; Previous</a>
+					</div>	
+
+					<div class="col-md-6 col-sm-6 col-xs-6" align="right">
+						<a href="post_ds8.html" target="_self">Next &#187;</a>
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-md"></div>
+		<div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+			
+		
+		<!-- Go To Top -->
+		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+
+
+
+
+
+
+
+
+
+		
+			
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+		<script src="js/google_map.js"></script>
+
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

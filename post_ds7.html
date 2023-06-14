@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+ <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+ <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+ <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+ <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Reyhan Dede</title>
+
+
+
+		<style>
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			#particles-js
+			{
+				width:100%;
+				height: 100vh;
+				background-image: url("");
+				position: relative;
+				bottom: 0%;
+
+			}
+
+			h2
+			{
+				position: absolute;
+				top:30%;
+				left:10%;
+				right: 10%;
+				text-align: center;
+				font-size: larger;
+
+
+			}
+
+
+			h6
+			{
+				position: absolute;
+				top:40%;
+				left:10%;
+				right: 10%;
+                font-size: large;
+
+			}
+
+		</style>
+
+	
+
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="Logo.png">
+
+		<!-- Google Webfont -->
+		<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Icomoon Icons -->
+		<link rel="stylesheet" href="css/icomoon-icons.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Easy Responsive Tabs -->
+		<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+		<!-- Theme Style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/about.css">
+
+
+	
+
+
+
+	</head>
+	<body>
+		
+		
+		 <header id="fh5co-header" role="banner">
+			<!-- Logo -->
+
+		<div>
+				<section class="hero-section">
+	
+						<!-- Logo -->
+							
+							<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							
+				<!-- Logo -->
+			
+			
+				
+		
+			   <!-- Main Nav -->
+				<!-- Start Nav Section -->
+			<nav id="navbar" class="navbar">
+			<ul class="nav-menu" >
+				<li>
+				<a data-scroll="home" href="index.html" class="dot ">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="about" href="about.html" class="dot">
+					<span>About me</span>
+				</a>
+				</li>
+				<li>
+					<a data-scroll="services" href="project.html" class="dot active">
+						<span>Projects</span>
+					</a>
+				</li>
+
+				<li>
+				<a data-scroll="contact" href="contact.html" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+			</nav>
+			   <!-- Main Nav -->
+			   </section>
+
+			</div>
+		
+	</header>
+
+
+		<main role="main">
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+		<!-- Start Intro -->
+		<div class="container text-center">
+			<h4>CUSTOMER CLUSTER ANALYSIS</h4>
+		</div>
+			<!-- End Intro -->
+
+		<!-- Text -->
+		<div class="container">
+		<div class="col-md-12-center">
+			<p> Clustering bank customers with more than one categorical feature using the kmodes method.</p>
+				
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+
+
+<p>Required libraries are imported.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+from kmodes.kprototypes import KPrototypes  
+from kmodes.kmodes import KModes
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+
+<p>
+This code reads a CSV file named BankChurners.csv into a DataFrame object using the read_csv function from the pandas library. The head method of the DataFrame object is then called to display the first 5 rows of the data.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df = pd.read_csv("BankChurners.csv")
+df.head()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/b1.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df.isnull().sum()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df=df[['Attrition_Flag', 'Customer_Age', 'Gender', 'Dependent_count','Education_Level','Marital_Status','Income_Category','Card_Category','Months_on_book']]
+df
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/b2.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df_temp= df[['Customer_Age','Dependent_count','Months_on_book']]
+df_temp
+</code></pre>
+</div>
+</div>
+
+<p>This code creates an instance of the LabelEncoder class from the preprocessing module of the sklearn library. The fit_transform method of the LabelEncoder object is then applied to each column of the DataFrame object df using the apply method. This encodes the categorical data in each column as integers.</p>			
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>le = preprocessing.LabelEncoder()
+df = df.apply(le.fit_transform)
+df.head()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/b3.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>This code creates an instance of the MinMaxScaler class from the sklearn library and uses it to scale the Customer_Age, Dependent_count, and Months_on_book columns of the DataFrame object df. The fit method of the MinMaxScaler object is called on each column to compute the scaling parameters, and the transform method is then called to apply the scaling to the data. The scaled data is then stored back in the corresponding column of the DataFrame.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center"><pre><code>scaler = MinMaxScaler()
+scaler.fit(df[['Customer_Age']])
+df['Customer_Age'] = scaler.transform(df[['Customer_Age']])
+
+scaler = MinMaxScaler()
+scaler.fit(df[['Dependent_count']])
+df['Dependent_count'] = scaler.transform(df[['Dependent_count']])
+
+scaler = MinMaxScaler()
+scaler.fit(df[['Months_on_book']])
+df['Months_on_book'] = scaler.transform(df[['Months_on_book']])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>code converts the DataFrame object df to a NumPy array using the values attribute and stores it in the mark_array variable. The code then prints the contents of the mark_array variable. The second, fourth, and ninth columns of the mark_array are then overwritten with the values from the third and fifth columns, converted to floating-point data type using the astype method</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>mark_array= df.values
+print(mark_array)
+mark_array[:, 1] = mark_array[:, 2].astype(float)
+mark_array[:, 3] = mark_array[:, 4].astype(float)
+mark_array[:, 8] = mark_array[:, 4].astype(float)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/b4.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>Code fits a KPrototypes model from the kmodes library to the data in the mark_array variable for different numbers of clusters ranging from 1 to 7. The fit_predict method of the KPrototypes object is called to fit the model and predict the cluster assignments for each data point. The cost of the model for each number of clusters is then appended to the cost list.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>cost = []
+for num_clusters in list(range(1,8)):
+    kproto = KPrototypes(n_clusters=num_clusters, init = "Cao",n_init = 1,verbose=2, max_iter=20)
+    kproto.fit_predict(mark_array, categorical=[0,2,4,5,6,7])
+    cost.append(kproto.cost_)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Code creates an array of values from 1 to 7 with a step size of 1 using the np.array and range functions. The code then uses the plot function from the matplotlib.pyplot library to create a line plot of the values in the cost list against the values in the elbow array. This plot can be used to determine the optimal number of clusters for the KPrototypes model using the elbow method.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>elbow = np.array([i for i in range(1,8,1)])
+plt.plot(elbow,cost)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/b5.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>This code fits a KPrototypes model from the kmodes library to the data in the mark_array variable with 5 clusters. The fit_predict method of the KPrototypes object is called to fit the model and predict the cluster assignments for each data point. The cluster assignments are then stored in the clusters variable.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>kproto = KPrototypes(n_clusters=5, init = "Cao",n_init = 1,verbose=2, max_iter=20)
+clusters=kproto.fit_predict(mark_array, categorical=[0,2,4,5,6,7])</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code creates a list cluster_dict containing the cluster assignments for each data point in the clusters variable. The code then adds a new column cluster to the DataFrame object df and assigns the values in the cluster_dict list to this column. The code also restores the original values of the Customer_Age, Dependent_count, and Months_on_book columns in the DataFrame object df from a temporary DataFrame object df_temp.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>cluster_dict=[]
+for c in clusters:
+    cluster_dict.append(c)
+
+df['cluster']=cluster_dict
+
+# Put original columns from temp to df:
+df[['Customer_Age','Dependent_count','Months_on_book']] = df_temp
+df
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/b6.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<p>This code creates 5 new DataFrame objects df1, df2, df3, df4, and df5 by filtering the rows in the DataFrame object df based on the values in the cluster column. The code then creates a scatter plot using the scatter function from the matplotlib.pyplot library to visualize the relationship between the Customer_Age and Months_on_book columns for each cluster. The points for each cluster are plotted in a different color with an alpha value of 0.4.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df1 = df[df.cluster==0]
+df2 = df[df.cluster==1]
+df3 = df[df.cluster==2]
+df4 = df[df.cluster==3]
+df5 = df[df.cluster==4]
+
+plt.figure(figsize=(15,15))
+plt.xlabel('Customer_Age')
+plt.ylabel('Months_on_book')
+
+plt.scatter(df1.Customer_Age, df1['Months_on_book'],color='green', alpha = 0.4)
+plt.scatter(df2.Customer_Age, df2['Months_on_book'],color='red', alpha = 0.4)
+plt.scatter(df3.Customer_Age, df3['Months_on_book'],color='gray', alpha = 0.4)
+plt.scatter(df4.Customer_Age, df4['Months_on_book'],color='orange', alpha = 0.4)
+plt.scatter(df5.Customer_Age, df5['Months_on_book'],color='yellow', alpha = 0.4)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/customer.png" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+
+<div class="col-md-12" align="right"><a href="https://github.com/Reyhandede/BankCustomer/blob/main/bank_customer.ipynb" target="_blank">GitHub</a></div>
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+		<div id="fh5co-work">
+					<div class="col-md-6 col-sm-6 col-xs-6" align="left">
+						<a href="post_ds10.html" target="_self" >&#171; Previous</a>
+					</div>	
+
+					<div class="col-md-6 col-sm-6 col-xs-6" align="right">
+						<a href="post_ds8.html" target="_self">Next &#187;</a>
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-md"></div>
+		<div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+			
+		
+		<!-- Go To Top -->
+		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+	
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+		<script src="js/google_map.js"></script>
+
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

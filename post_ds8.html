@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+ <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+ <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+ <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+ <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Reyhan Dede</title>
+
+
+
+		<style>
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			#particles-js
+			{
+				width:100%;
+				height: 100vh;
+				background-image: url("");
+				position: relative;
+				bottom: 0%;
+
+			}
+
+			h2
+			{
+				position: absolute;
+				top:30%;
+				left:10%;
+				right: 10%;
+				text-align: center;
+				font-size: larger;
+
+
+			}
+
+
+			h6
+			{
+				position: absolute;
+				top:40%;
+				left:10%;
+				right: 10%;
+                font-size: large;
+
+			}
+
+		</style>
+
+	
+
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="Logo.png">
+
+		<!-- Google Webfont -->
+		<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Icomoon Icons -->
+		<link rel="stylesheet" href="css/icomoon-icons.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Easy Responsive Tabs -->
+		<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+		<!-- Theme Style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/about.css">
+
+
+	
+
+
+
+	</head>
+	<body>
+		
+		
+		 <header id="fh5co-header" role="banner">
+			<!-- Logo -->
+
+		<div>
+				<section class="hero-section">
+	
+						<!-- Logo -->
+							
+							<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							
+				<!-- Logo -->
+			
+			
+				
+		
+			   <!-- Main Nav -->
+				<!-- Start Nav Section -->
+			<nav id="navbar" class="navbar">
+			<ul class="nav-menu" >
+				<li>
+				<a data-scroll="home" href="index.html" class="dot ">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="about" href="about.html" class="dot">
+					<span>About me</span>
+				</a>
+				</li>
+				<li>
+					<a data-scroll="services" href="project.html" class="dot active">
+						<span>Projects</span>
+					</a>
+				</li>
+
+				<li>
+				<a data-scroll="contact" href="contact.html" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+			</nav>
+			   <!-- Main Nav -->
+			   </section>
+
+			</div>
+		
+	</header>
+
+
+		<main role="main">
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+		<!-- Start Intro -->
+		<div class="container text-center">
+			<h4>FINANCIAL DATA ANALYSIS</h4>
+		</div>
+			<!-- End Intro -->
+
+
+
+
+		<!-- Text -->
+		<div class="container">
+		<div class="col-md-12-center">
+      <p> Analysis of buying and selling criteria according to the opening and closing values of financial units.</p>
+				
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+<p>Required libraries are imported.</p>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import yfinance as yf
+from yahoofinancials import YahooFinancials
+import plotly.graph_objects as go
+import decompose
+from statsmodels.tsa.seasonal import seasonal_decompose
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+<p>Yahoo Finance From Apple Inc. Yfinance library for downloading historical market data for (AAPL). I also converted the resulting DataFrame's index to a DatetimeIndex.</p>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>apple_df = yf.download('AAPL',start= '2017-01-01',progress=False)
+apple_df.index=pd.to_datetime(apple_df.index)
+apple_df
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/fi1.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df=apple_df[["Close","Volume"]]
+df.head()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>This function buy_sell_MA takes in a DataFrame data and an optional percentile parameter perc with a default value of 50. It calculates the rolling mean of the closing prices for windows of 5, 14, and 21 days and stores them in the DataFrame MAs. The function then calculates the percentiles for the difference between the short-term moving average and the mid-term and long-term moving averages for upward and downward trends. It then generates buy and sell signals based on these percentiles and returns a tuple containing the buy signals, sell signals, and profit/loss (PL).</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def buy_sell_MA(data, perc = 50):
+  buy_sell = []
+  buy_signal = []
+  sell_signal = []
+  flag = 42
+
+  rolling_app5 = data["Close"].rolling(window=5).mean()
+  rolling_app14 = data["Close"].rolling(window=14).mean()
+  rolling_app21 = data["Close"].rolling(window=21).mean()
+
+  MAs = pd.concat([data["Close"], rolling_app5, rolling_app14, rolling_app21], axis=1)
+  MAs.columns = ['Close', 'short', 'mid', 'long']
+
+  up = MAs[(np.array(MAs["short"] - MAs["mid"])>0) & (np.array(MAs["short"] - MAs["long"])>0)]
+  down =MAs[(np.array(MAs["short"] - MAs["mid"])<0) & (np.array(MAs["short"] - MAs["long"])<0)]
+
+  ups = np.percentile(np.array(up["short"] - up["mid"]),perc)
+  downs = np.percentile(np.array(down["short"] - down["long"]),perc)
+
+  for i in range(0,len(MAs)):
+    if (MAs["short"][i] > MAs["mid"][i]+ups) & (MAs["short"][i] > MAs["long"][i]+ups):
+      buy_signal.append(np.nan)
+      if flag != 1:
+        sell_signal.append(MAs["Close"][i])
+        buy_sell.append(MAs["Close"][i])
+        flag=1
+      else:
+        sell_signal.append(np.nan)
+    elif(MAs["short"][i] < MAs["mid"][i]-downs) & (MAs["short"][i] < MAs["long"][i]-downs):
+      sell_signal .append(np.nan)
+      if flag != 0:
+        buy_signal.append(MAs["Close"][i])
+        buy_sell.append(-MAs["Close"][i])
+        flag = 0
+	 else:
+        buy_signal.append(np.nan)
+    else:
+      buy_sell.append(np.nan)
+      sell_signal.append(np.nan)
+      buy_signal.append(np.nan)
+  operations = np.array(buy_sell)
+  operations = operations[~np.isnan(operations)]
+  neg = 0
+  pos = 0
+
+  for i in range(len(operations)):
+    if operations[i] < 0:
+      neg = i
+      break
+  for i in range(1,len(operations)):
+    if operations[-i] > 0:
+      pos = i-1
+      break
+  operations = operations[neg: -pos]
+  PL = np.sum(operations)
+
+  return (buy_signal, sell_signal, PL)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>opt = []
+
+percentile = np.arange(10,91,5)
+
+for i,j in enumerate(percentile):
+  opt.append((percentile[i],buy_sell_MA(df, j)[2]))
+
+opt = pd.DataFrame(opt)
+
+opt.columns = ["Percentile", "Performance"]
+opt = opt.sort_values(by = "Performance", ascending=False)    
+</code></pre>
+</div>
+</div>		
+<p>Code creates a new DataFrame RES with a “Close” column containing the closing prices from the apple_df DataFrame. It then calls the buy_sell_MA function with the input DataFrame df and the optimal percentile value found in the previous code block (the first value in the “Percentile” column of the opt DataFrame). The buy and sell signals returned by the function are stored in the “BUY_MA” and “SELL_MA” columns of the RES DataFrame, respectively. The profit/loss (PL) value returned by the function is stored in the variable res_MA. </p>		
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>RES=pd.DataFrame()
+RES["Close"]=apple_df["Close"]
+RES["BUY_MA"] = buy_sell_MA(df, opt["Percentile"].values[0])[0]
+RES["SELL_MA"] = buy_sell_MA(df, opt["Percentile"].values[0])[1]
+res_MA= buy_sell_MA(df, opt["Percentile"].values[0])[2]
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This function buy_sell_BB takes in a DataFrame data and calculates Bollinger Bands for the closing prices. It creates a new DataFrame BBs with columns for the closing prices, the 20-day simple moving average (SMA), the standard deviation (STD), and the upper and lower Bollinger Bands. The function then generates buy and sell signals based on whether the closing price is above the upper Bollinger Band or below the lower Bollinger Band, respectively. It returns a tuple containing the buy signals, sell signals, and profit/loss (PL).</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def buy_sell_BB(data):
+  buy_sell = []
+  buy_signal = []
+  sell_signal = []
+  flag = 42
+
+  BBs = pd.DataFrame()
+
+  BBs["close"] = data["Close"]
+  #standart sapma ve ortalama güven aralığını verir.
+  BBs["SMA"]= BBs["close"].rolling(window = 20).mean()
+  BBs["STD"] = BBs["close"].rolling(window = 20).std()
+  BBs["upper"] = BBs["SMA"] + BBs["STD"]*2
+  BBs["lower"] = BBs["SMA"] - BBs["STD"]*2
+
+  for i in range(0,len(BBs)):
+    if (BBs["close"][i] > BBs["upper"][i]):
+      buy_signal.append(np.nan)
+      if flag != 1:
+        sell_signal.append(BBs["close"][i])
+        buy_sell.append(BBs["close"][i])
+        flag = 1
+      else:
+        sell_signal.append(np.nan)
+    elif (BBs["close"][i] < BBs["lower"][i]):
+      sell_signal .append(np.nan)
+      if flag !=0:
+        buy_signal.append(BBs["close"][i])
+        buy_sell.append(-BBs["close"][i])
+        flag = 0
+      else:
+        buy_signal.append(np.nan)
+
+    else:
+      buy_sell.append(np.nan)
+	        sell_signal .append(np.nan)
+      buy_signal.append(np.nan)
+
+    operations = np.array(buy_sell)
+    operations = operations[~np. isnan(operations)]
+
+    neg = 0
+    pos = 0
+
+    for i in range(len(operations)):
+      if operations[i] <0:
+        neg = i
+        break
+
+    for i in range(1,len(operations)):
+      if operations[-i] > 0:
+        pos = i-1
+        break
+    operations = operations[neg:-pos]
+    PL = np.sum(operations)
+
+  return (buy_signal, sell_signal,PL)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code calls the buy_sell_BB function with the input DataFrame df and stores the buy and sell signals returned by the function in the “BUY_BB” and “SELL_BB” columns of the RES DataFrame, respectively. The profit/loss (PL) value returned by the function is stored in the variable res_BB. This code generates buy and sell signals for the input data using Bollinger Bands.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>RES["BUY_BB"]=buy_sell_BB(df)[0]
+RES["SELL_BB"]=buy_sell_BB(df)[1]
+res_BB=buy_sell_BB(df)[2]
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This function buy_sell_MD takes in a DataFrame data and an optional percentile parameter opt with a default value of 50. It calculates the exponential moving averages (EMA) for the closing prices with spans of 12 and 26 days and stores them in the DataFrame MDs. The function then calculates the moving average convergence divergence (MACD) and the signal line as the 9-day EMA of the MACD. The function calculates the percentiles for the difference between the MACD and the signal line for upward and downward trends. It then generates buy and sell signals based on these percentiles and returns a tuple containing the buy signals, sell signals, and profit/loss (PL).</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def buy_sell_MD(data, opt = 50):
+  buy_sell = []
+  buy_signal = []
+  sell_signal = []
+  flag = 42
+
+  MDs = pd.DataFrame()
+  MDs["close"] = data["Close"]
+  MDs["short"] = MDs["close"].ewm(span=12, adjust = False).mean()#üst hareketli ortalama son gözlemlere öncekilerden daha çok ağırlık veriyor.12 gün
+  MDs["long"] = MDs["close"].ewm(span=26, adjust = False).mean()#26
+  MDs["MACD"] = MDs["short"] - MDs["long"]#farkı
+  MDs["signal"] = MDs["MACD"].ewm(span=9, adjust = False).mean()#9 gün
+
+  up = MDs[(np.array(MDs["MACD"] - MDs["signal"])>0)]
+  down = MDs[(np.array(MDs["MACD"] - MDs["signal"])<0)]
+  ups= np.percentile(np.array(up["MACD"] - up["signal"]),opt)
+  downs = np.percentile(np.array(down["MACD"] - down["signal"]),opt)
+  for i in range(0,len(MDs)):
+    if(MDs["MACD"][i] > MDs["signal"][i]+ups):
+      buy_signal.append(np.nan)
+      if flag != 1:
+        sell_signal.append(MDs["close"][i])
+        buy_sell.append(MDs["close"][i])
+        flag = 1
+
+      else:
+        sell_signal.append(np.nan)
+    elif (MDs["MACD"][i] < MDs["signal"][i]+downs):
+      sell_signal.append(np.nan)
+      if flag != 0:
+        buy_signal.append(MDs["close"][i])
+        buy_sell.append(-MDs["close"][i])
+        flag = 0
+      else:
+        buy_signal .append(np.nan)
+    else:
+	      buy_sell.append(np.nan)
+      sell_signal .append(np.nan)
+      buy_signal.append(np.nan)
+    operations = np.array(buy_sell)
+    operations = operations [~np.isnan(operations)]
+    neg = 0
+    pos = 0
+
+    for i in range(len(operations)):
+      if operations[i] < 0:
+        neg = i
+        break
+    for i in range(1,len(operations)):
+      if operations[-i] > 0:
+        pos= i-1
+        break
+    operations=operations[neg:-pos]
+    PL=np.sum(operations)
+  return(buy_signal,sell_signal,PL)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code creates an empty list opt and an array percentile with values ranging from 10 to 90 in increments of 5. It then iterates over the percentile array and calls the buy_sell_MD function with the input DataFrame df and the current percentile value. The profit/loss (PL) value returned by the function is appended to the opt list along with the current percentile value. The opt list is then converted to a DataFrame with columns “Percentile” and “Performance” and sorted in descending order by the “Performance” column. This code finds the optimal percentile value that results in the highest performance (profit/loss) when calling the buy_sell_MD function.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>#optimize
+opt = []
+percentile = np.arange(10,91,5)
+for i,j in enumerate(percentile):
+  opt.append((percentile[i],buy_sell_MD(df, j)[2]))
+opt = pd.DataFrame(opt)
+opt.columns = ["Percentile","Performance"]
+opt = opt.sort_values(by = "Performance",ascending=False)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code calls the buy_sell_MD function with the input DataFrame df and the optimal percentile value found in the previous code block (the first value in the “Percentile” column of the opt DataFrame). The buy and sell signals returned by the function are stored in the “BUY_MD” and “SELL_MD” columns of the RES DataFrame, respectively. The profit/loss (PL) value returned by the function is stored in the variable res_MD. This code generates buy and sell signals for the input data using the optimal percentile value found in the previous code block.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>RES["BUY_MD"] = buy_sell_MD(df, opt["Percentile"].values[0])[0]
+RES["SELL_MD"] = buy_sell_MD(df, opt["Percentile"].values[0])[1]
+res_MD=buy_sell_MD(df)[2]
+RES</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/f2.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>This function buy_sell_RS takes in a DataFrame data and two optional parameters opt_low and opt_high with default values of 30 and 70, respectively. It calculates the relative strength index (RSI) for the closing prices and stores it in the DataFrame RSs. The function then generates buy and sell signals based on whether the RSI is above the opt_high value or below the opt_low value, respectively. It returns a tuple containing the buy signals, sell signals, and profit/loss (PL).</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def buy_sell_RS(data, opt_low = 30, opt_high = 70):
+  buy_sell = []
+  buy_signal = []
+  sell_signal = []
+  flag = 42
+
+  RSs = pd.DataFrame()
+  RSs["Close"] = data["Close"]
+  RSs["Diff"] = RSs["Close"].diff(1)
+
+  #getiri varsa negatifler pozitif götürü varsa pozitifler 0 olsun.
+  RSs["Gain"] = RSs["Diff"].mask(RSs[ "Diff"]<0,0)
+  RSs["Loss"] = RSs["Diff"].mask(RSs[ "Diff" ]>0,0)
+
+  RSs["Avg_Gain"] = RSs["Gain"].rolling(window = 14).mean()
+  RSs["Avg_Loss"]= RSs["Loss"].rolling(window = 14).mean()
+
+  rs = abs(RSs["Avg_Gain"]/RSs["Avg_Loss"])
+  RSs["rsi"] = 100 - (100 / (1+rs))
+
+  for i in range(0,len(RSs)):
+    if (RSs["rsi"][i] > opt_high):
+      buy_signal.append(np.nan)
+      if flag!=1:
+        sell_signal.append(RSs["Close"][1])
+        buy_sell.append(RSs["Close"][i])
+        flag = 1
+      else:
+        sell_signal.append(np.nan)
+    elif (RSs["rsi"][i] < opt_low):
+      sell_signal .append(np.nan)
+      if flag != 0:
+        buy_signal .append(RSs["Close" ][i])
+        buy_sell.append(-RSs["Close"][i])
+        flag = 0
+		      else:
+        buy_signal.append(np.nan)
+    else:
+      buy_sell.append(np.nan)
+      sell_signal.append(np.nan)
+      buy_signal.append(np.nan)
+    operations = np.array(buy_sell)
+    operations = operations[~np. isnan(operations)]
+
+    neg=0
+    pos=0
+
+    for i in range(len(operations)):
+      if operations[i] < 0:
+        neg = i
+        break
+    for i in range(1,len(operations)):
+      if operations[-i] > 0:
+        pos = i-1
+        break
+    operations = operations[neg:-pos]
+    PL = np.sum(operations)
+  return (buy_signal,sell_signal,PL)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>This code creates an empty list opt and an array percentile with values ranging from 0 to 99 in increments of 1. It then iterates over the percentile array and calls the buy_sell_RS function with the input DataFrame df and the current low and high percentile values. The profit/loss (PL) value returned by the function is appended to the opt list along with the current low and high percentile values. The opt list is then converted to a DataFrame with columns “Low_Value”, “High_Value”, and “Performance” and sorted in descending order by the “Performance” column. This code finds the optimal low and high percentile values that result in the highest performance (profit/loss) when calling the buy_sell_RS function.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>opt = []
+percentile = np.arange(0,100,1)
+for i,j in enumerate(percentile):
+  if j<50:
+    opt.append((percentile[i],percentile[-(i+1)], buy_sell_RS(df, opt_low = percentile[i], opt_high = percentile[-(i+1)])[2]))
+
+opt = pd.DataFrame(opt)
+opt.columns = ["Low_Value", "High_Value" ,"Performance"]
+opt = opt.sort_values(by = "Performance", ascending=False)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>This code calls the buy_sell_RS function with the input DataFrame df and the optimal low and high percentile values found in the previous code block (the first values in the “Low_Value” and “High_Value” columns of the opt DataFrame). The buy and sell signals returned by the function are stored in the “BUY_RS” and “SELL_RS” columns of the RES DataFrame, respectively. The profit/loss (PL) value returned by the function is stored in the variable res_RS. This code generates buy and sell signals for the input data using the optimal low and high percentile values found in the previous code block.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>RES["BUY_RS"] = buy_sell_RS(df, opt_low = opt["Low_Value"].values[0], opt_high = opt["High_Value"].values[0])[0]
+RES["SELL_RS"] = buy_sell_RS(df, opt_low = opt["Low_Value"].values[0], opt_high = opt["High_Value"].values[0])[1]
+res_RS=buy_sell_RS(df, opt_low = opt["Low_Value"].values[0], opt_high = opt["High_Value"].values[0])[2]
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This function buy_sell_VW takes in a DataFrame data and an optional percentile parameter opt with a default value of 0. It calculates the volume-weighted average price (VWAP) for the closing prices and volume with windows of 14, 21, and 50 days and stores them in the DataFrame VWs. The function then calculates the percentiles for the difference between the short-term VWAP and the mid-term and long-term VWAPs for upward and downward trends. It then generates buy and sell signals based on these percentiles and returns a tuple containing the buy signals, sell signals, and profit/loss (PL).</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def buy_sell_VW(data, opt = 0):
+  buy_sell = []
+  buy_signal = []
+  sell_signal = []
+  flag =42
+
+  VWs = pd.DataFrame()
+
+  VWs["Close"] = data["Close"]
+  VWs["Volume"] = data["Volume"]
+  VWs["CxV"] = VWs ["Close"] * VWs ["Volume"]
+
+  VWs["VW14"] = VWs["CxV"].rolling(window = 14).sum() / VWs["Volume"].rolling(window = 14).sum()
+  VWs["VW21"] = VWs["CxV"].rolling(window = 21).sum() / VWs["Volume"].rolling(window = 21).sum()
+  VWs["VW50"] = VWs["CxV"].rolling(window = 50).sum() / VWs["Volume"].rolling(window = 50).sum()
+  up= VWs[(np.array(VWs["VW14"] - VWs["VW21"])>0) & (np.array(VWs["VW14"] - VWs["VW50"])>0)]
+  down = VWs[(np.array(VWs["VW14"] - VWs["VW21"])<0) & (np.array(VWs["VW14"] - VWs["VW50"])<0)]
+
+  ups = np.percentile(np.array(up["VW14"] - up["VW21"]) ,opt)
+  downs = np.percentile(np.array(down["VW14"] - down["VW50"]),opt)
+
+  for i in range(0,len(VWs)):
+    if (VWs["VW14"][i] > VWs["VW21"][i]+ups) & (VWs["VW14"][i] > VWs["VW50"][i]+ups):
+      buy_signal.append(np.nan)
+      if flag != 1:
+        sell_signal .append(VWs["Close"][i])
+        buy_sell.append(VWs["Close"][i])
+        flag = 1
+      else:
+        sell_signal.append(np.nan)
+    elif (VWs["VW14"][i] < VWs["VW21"][i]+downs) & (VWs["VW14"][i] < VWs["VW50"][i]+downs):
+      sell_signal.append(np.nan)
+      if flag != 0:
+	          buy_signal .append(VWs["Close"][i])
+        buy_sell.append(-VWs["Close"][i])
+        flag = 0
+      else:
+        buy_signal .append(np.nan)
+    else:
+      buy_sell.append(np.nan)
+      sell_signal.append(np.nan)
+      buy_signal.append(np.nan)
+
+    operations = np.array(buy_sell)
+    operations = operations[~np.isnan(operations)]
+
+    neg=0
+    pos=0
+
+    for i in range(len(operations)):
+      if operations[i] < 0:
+        neg =i
+        break
+    for i in range(1,len(operations)):
+      if operations[-i] > 0:
+        pos = i-1
+        break
+    operations = operations[neg:-pos]
+    PL = np.sum(operations)
+
+  return(buy_signal,sell_signal,PL) 
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code calls the buy_sell_VW function with the input DataFrame df and stores the buy and sell signals returned by the function in the “BUY_VWs” and “SELL_VWs” columns of the RES DataFrame, respectively. The profit/loss (PL) value returned by the function is stored in the variable res_VWs. This code generates buy and sell signals for the input data using volume-weighted average price (VWAP).</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>RES["BUY_VWs"] = buy_sell_VW(df)[0]
+RES["SELL_VWs"] = buy_sell_VW(df)[1]
+res_VWs=buy_sell_VW(df)[2]
+RES
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/fi3.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>This code creates a dictionary result with keys for the different trading strategies (“Moving Average”, “Bollinger Bounds”, “MACD”, “RSI”, and “Volume Weighted Moving Average”) and values for the corresponding profit/loss (PL) values calculated by the respective functions (res_MA, res_BB, res_MD, res_RS, and res_VWs). This code stores the performance of each trading strategy in a dictionary.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>result = {"Moving Average": res_MA,
+"Bollinger Bounds": res_BB,
+"MACD":res_MD,
+"RSI": res_RS,
+"Volume Weighted Moving Average": res_VWs}
+result
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>This code drops the “Close” column from the RES DataFrame and then drops any rows that contain only NaN values. The resulting DataFrame contains the buy and sell signals generated by the different trading strategies for the input data.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>indics = RES.drop("Close", axis=1).dropna(thresh=1, axis=0)
+indics.head()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code resets the index of the indics DataFrame in place. The old index is removed and replaced with a new default integer index</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>indics.reset_index(inplace=True)
+indics
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/fi4.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>This code reshapes the indics DataFrame using the melt function. The “Date” column is used as the identifier variable and the remaining columns are melted into two columns: “Metrics” and “Values”. Any rows containing NaN values are dropped and the resulting DataFrame is sorted by the “Date” and “Values” columns. The code then splits the “Metrics” column into two new columns: “Operation” and “Indicator”, using an underscore as the separator. This code reshapes the indics DataFrame into a long format with separate columns for the operation (buy or sell) and the indicator (MA, BB, MD, RS, or VWs).</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>indics = pd.melt(indics, id_vars=["Date" ],var_name="Metrics", value_name="Values").dropna(axis = 0).sort_values(["Date","Values"])
+indics[["Operation","Indicator"]] = indics["Metrics"].str.split("_",1,expand = True)
+indics.head()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/fi5.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>This code creates two empty lists app and combin and a variable flag with an initial value of 42. It then groups the indics DataFrame by consecutive operations (buy or sell) and appends each group to the app list. The code then iterates over the app list and checks the operation of each group. For sell operations, it finds the row with the maximum “Values” value and appends it to the combin list. For buy operations, it finds the row with the minimum “Values” value and appends it to the combin list. This code finds the optimal buy and sell signals for each group of consecutive operations.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>app = []
+combin = []
+flag = 42
+
+for k, v in indics.groupby((indics["Operation"].shift() != indics["Operation"]).cumsum()):#buy ve sell değerleri gruplandı.
+  app.append(v)
+
+for i in range(0,len(app)):#bütün veride 
+  if(app[i]["Operation"].values [0] == "SELL"):#indicatorlere göre seller 
+    if flag != 1:
+      combin.append(app[i][app[i].index==app[i]["Values"].idxmax()])#sell lerin en yükseği
+      flag = 1
+    else:
+      combin.append(np.nan)
+  if (app[i]["Operation"].values[0]=="BUY"):
+    if flag != 42:
+      combin.append(app[i][app[i].index==app[i]["Values"].idxmin()])#buyların en düşüğü 
+      flag = 0
+    else:
+      combin.append(np.nan)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code creates a variable combinations and sets its initial value to the first element of the combin list. It then iterates over the combin list and concatenates each element to the combinations variable. This code concatenates all the elements of the combin list into a single DataFrame.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>combinations=combin[i]
+for i in range(0,len(combin)-1):
+  combinations = pd.concat([combinations,combin[i+1]]) 
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code creates a new “Step” column in the combinations DataFrame with values ranging from 0 to the length of the DataFrame in increments of 1. It then filters the DataFrame to only include rows where the “Step” value is not equal to 0. This code adds a “Step” column to the combinations DataFrame and removes the first row.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>combinations["Step"] = np.arange(0, len(combinations), 1)
+combinations = combinations.loc[combinations["Step"]!=0,:]
+combinations.tail()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code creates two variables neg and pos with initial values of 0. It then iterates over the combinations DataFrame and finds the first sell operation and the last buy operation. The index of the first sell operation minus 1 is stored in the neg variable and the index of the last buy operation is stored in the pos variable. The code then filters the combinations DataFrame to only include rows between the first sell operation and the last buy operation. This code finds the optimal sequence of buy and sell operations.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>neg = 0
+pos = 0
+for i in range(1,len(combinations)):
+  if (combinations["Operation"].values[i] == "SELL"):
+    neg = i-1
+    break
+for i in range(1,len(combinations)):
+  if (combinations["Operation"].values[-(i)] == "BUY"):
+    pos = i
+    break
+operations=combinations[neg:-pos]
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/fi6.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<p>This code creates two empty lists decisions_buy and decisions_sell. It then iterates over the operations DataFrame and checks the value of the “Step” column for each row. If the “Step” value is even, the current row is appended to the decisions_sell list. Otherwise, the current row is appended to the decisions_buy list. The code then converts the decisions_buy and decisions_sell lists into DataFrames. This code separates the buy and sell operations into two separate DataFrames.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>decisions_buy = []
+decisions_sell = []
+for i in range(0, len(operations)):
+  if (operations["Step"].values[i] % 2 == 0):
+    decisions_sell.append(operations[["Date", "Metrics","Values"]].iloc[i, :])
+else:
+  decisions_buy.append(operations[["Date", "Metrics","Values"]].iloc[i,:])
+decisions_buy = pd.DataFrame(decisions_buy)
+decisions_sell = pd.DataFrame(decisions_sell)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code calculates the sum of the “Values” column for the decisions_sell and decisions_buy DataFrames and subtracts the latter from the former. This value represents the total profit/loss for the trading strategy.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>decisions_sell["Values"].values.sum()-decisions_buy["Values"].values.sum()
+</code></pre>
+
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code creates a new figure with a size of 10 by 5 inches and plots the closing prices from the df DataFrame. It then adds scatter plots for the buy and sell operations using the “Date” and “Values” columns from the decisions_buy and decisions_sell DataFrames, respectively. The buy operations are plotted in green with an upward-pointing triangle marker and the sell operations are plotted in red with a downward-pointing triangle marker. The code then sets the title, x-label, y-label, and legend for the plot. This code generates a plot of the closing prices with buy and sell signals.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>plt.figure(figsize=(10,5))
+plt.plot(df.index, df["Close"], label = "Close Price", alpha = 0.5)
+
+plt.scatter(decisions_buy["Date"], decisions_buy["Values"], color="green",label="BUY",marker="^",alpha=1)
+plt.scatter(decisions_sell["Date"], decisions_sell["Values"],color="red",label="SELL",marker="v",alpha=1)
+
+plt.title("Close Price Optimized Buy and Sell Signals")
+plt.xlabel("Date")
+plt.ylabel("Close Price")
+plt.legend(loc = "upper left")
+</code></pre>
+
+</div>
+</div>
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/finansal.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>	
+
+<div class="col-md-12" align="right"><a href="https://github.com/Reyhandede/Financial-Data-Analysis/blob/main/UNIQUE_RESULTS.ipynb" target="_blank">GitHub</a></div>
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+		<div id="fh5co-work">
+					<div class="col-md-6 col-sm-6 col-xs-6" align="left">
+						<a href="post_ds10.html" target="_self" >&#171; Previous</a>
+					</div>	
+
+					<div class="col-md-6 col-sm-6 col-xs-6" align="right">
+						<a href="post_ds8.html" target="_self">Next &#187;</a>
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-md"></div>
+		<div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+			
+		
+		<!-- Go To Top -->
+		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+
+	
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+		<script src="js/google_map.js"></script>
+
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+ <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+ <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+ <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+ <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Reyhan Dede</title>
+
+
+
+		<style>
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			#particles-js
+			{
+				width:100%;
+				height: 100vh;
+				background-image: url("");
+				position: relative;
+				bottom: 0%;
+
+			}
+
+			h2
+			{
+				position: absolute;
+				top:30%;
+				left:10%;
+				right: 10%;
+				text-align: center;
+				font-size: larger;
+
+
+			}
+
+
+			h6
+			{
+				position: absolute;
+				top:40%;
+				left:10%;
+				right: 10%;
+                font-size: large;
+
+			}
+
+		</style>
+
+	
+
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="Logo.png">
+
+		<!-- Google Webfont -->
+		<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Icomoon Icons -->
+		<link rel="stylesheet" href="css/icomoon-icons.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Easy Responsive Tabs -->
+		<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+		<!-- Theme Style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/about.css">
+
+
+	
+
+
+
+	</head>
+	<body>
+		
+		
+		 <header id="fh5co-header" role="banner">
+			<!-- Logo -->
+
+		<div>
+				<section class="hero-section">
+	
+						<!-- Logo -->
+							
+							<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							
+				<!-- Logo -->
+			
+			
+				
+		
+			   <!-- Main Nav -->
+				<!-- Start Nav Section -->
+			<nav id="navbar" class="navbar">
+			<ul class="nav-menu" >
+				<li>
+				<a data-scroll="home" href="index.html" class="dot ">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="about" href="about.html" class="dot">
+					<span>About me</span>
+				</a>
+				</li>
+				<li>
+					<a data-scroll="services" href="project.html" class="dot active">
+						<span>Projects</span>
+					</a>
+				</li>
+
+				<li>
+				<a data-scroll="contact" href="contact.html" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+			</nav>
+			   <!-- Main Nav -->
+			   </section>
+
+			</div>
+		
+	</header>
+
+
+		<main role="main">
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+		<!-- Start Intro -->
+		<div class="container text-center">
+			<h4>HEARTBEAT ABNORMALITY DETECTION</h4>
+		</div>
+			<!-- End Intro -->
+
+
+
+
+		<!-- Text -->
+		<div class="container">
+		<div class="col-md-12-center">
+			<p> Classification of various heartbeat sounds by long-short-term (LSTM) memory method.</p>
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+<p>Required libraries are imported.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import matplotlib.pyplot as plt
+import pandas as pd
+import os
+import librosa
+import numpy as np
+from tqdm import tqdm
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.utils import to_categorical
+from sklearn.preprocessing import LabelEncoder
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import Adam
+from sklearn import metrics
+from tensorflow.keras.callbacks import ModelCheckpoint
+from keras.utils.vis_utils import plot_model
+import noisereduce as nr
+from google.colab import drive
+from tensorflow.keras.layers import Dense, Dropout, Activation, LSTM, Bidirectional, Flatten
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>drive.mount("/content/gdrive")
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>Each directory is named after a cell type in the celltypes list and is located within the heart directory.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>celltypes = ['artifact', 'extrahls', 'extrastole', 'murmur', 'normal']
+path = ["/content/gdrive/MyDrive/heart" +  "/" + celltype  for celltype in celltypes]
+path
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>This code defines a function called features_extractor that takes in a filename as an argument. The function uses the librosa library to load the audio file and extract its Mel-frequency cepstral coefficients (MFCCs). The MFCCs are then scaled and returned by the function.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def features_extractor(filename):
+    audio, sample_rate = librosa.load(filename, res_type='kaiser_fast') 
+    reduced_noise = nr.reduce_noise(y=audio, sr=sample_rate)
+    mfccs_features = librosa.feature.mfcc(y=reduced_noise, sr=sample_rate, n_mfcc=25)
+    mfccs_scaled_features = np.mean(mfccs_features.T,axis=0)
+    return mfccs_scaled_features
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code block iterates over the directories in the path list and extracts the features of the audio files within each directory using the features_extractor function. The extracted features and their corresponding class labels are then appended to the extracted_features list.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>extracted_features=[]
+for index, values in enumerate(path):
+    file_name = os.listdir(values)
+    for i in range(0,len(file_name)):
+      final_class_labels=celltypes[index]
+      data=features_extractor("/content/gdrive/MyDrive/heart" + "/"+final_class_labels +"/"+file_name[i])
+      extracted_features.append([data,final_class_labels])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># We will convert extracted_features to Pandas dataframe
+extracted_features_df = pd.DataFrame(extracted_features,columns=['feature','class'])
+extracted_features_df.tail()
+extracted_features_df["class"].value_counts()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/h2.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># We then split the dataset into independent and dependent dataset
+X=np.array(extracted_features_df['feature'].tolist())
+y=np.array(extracted_features_df['class'].tolist())
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code uses the LabelEncoder class from the sklearn library to encode the class labels in the y variable as integers. The encoded labels are then converted to a one-hot encoded format using the to_categorical function from the keras library.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>labelencoder=LabelEncoder()
+y=to_categorical(labelencoder.fit_transform(y))
+</code></pre>
+</div>
+</div>
+
+<!-- End Pre Code -->
+<p>The data is divided into training and test data.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=0)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code defines a neural network model using the Sequential class from the keras library. The model consists of several Dense layers with relu activation functions, as well as a Dropout layer and a Flatten layer. The final layer uses a softmax activation function to output class probabilities. The model is then compiled with a categorical cross-entropy loss function and the Adam optimizer. The model.summary() function prints a summary of the model architecture.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>num_labels=6
+model = Sequential()
+model.add(Dense(128,activation='relu',input_shape=(25,)))
+model.add(Dropout(0.3))
+model.add(Dense(128,activation='relu'))
+model.add(Dense(64,activation='relu'))
+model.add(Dense(64,activation='relu'))
+model.add(Flatten())
+model.add(Dense(5, activation='softmax'))
+
+model.compile(loss='categorical_crossentropy', optimizer=Adam(1e-4), metrics=['acc'])
+
+model.summary()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/h1.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># Trianing the model
+epochscount = 150
+num_batch_size = 15
+
+model.fit(X_train, y_train, batch_size=num_batch_size, epochs=epochscount, validation_data=(X_test, y_test), verbose=1)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>This code evaluates the trained model on the test set X_test and y_test using the evaluate method of the model object. The method returns the loss and accuracy of the model on the test set, which are stored in the validation_test_set_accuracy variable.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>validation_test_set_accuracy = model.evaluate(X_test,y_test,verbose=0)
+print(validation_test_set_accuracy[1])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/h3.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>model.predict(X_test)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/h4.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+
+
+
+
+
+
+<div class="col-md-12" align="right"><a href="https://github.com/Reyhandede/Heart_Lstm_Classification/blob/main/Heart_Lstm_Classification.ipynb" target="_blank">GitHub</a></div>
+
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+		<div id="fh5co-work">
+					<div class="col-md-6 col-sm-6 col-xs-6" align="left">
+						<a href="post_ds10.html" target="_self" >&#171; Previous</a>
+					</div>	
+
+					<div class="col-md-6 col-sm-6 col-xs-6" align="right">
+						<a href="post_ds8.html" target="_self">Next &#187;</a>
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-md"></div>
+		<div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+			
+		
+		<!-- Go To Top -->
+		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+
+
+
+
+
+
+
+
+
+		
+			
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+		<script src="js/google_map.js"></script>
+
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

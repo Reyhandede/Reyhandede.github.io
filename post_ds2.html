@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+ <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+ <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+ <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+ <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Reyhan Dede</title>
+
+
+
+		<style>
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			#particles-js
+			{
+				width:100%;
+				height: 100vh;
+				background-image: url("");
+				position: relative;
+				bottom: 0%;
+
+			}
+
+			h2
+			{
+				position: absolute;
+				top:30%;
+				left:10%;
+				right: 10%;
+				text-align: center;
+				font-size: larger;
+
+
+			}
+
+
+			h6
+			{
+				position: absolute;
+				top:40%;
+				left:10%;
+				right: 10%;
+                font-size: large;
+
+			}
+
+		</style>
+
+	
+
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="Logo.png">
+
+		<!-- Google Webfont -->
+		<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Icomoon Icons -->
+		<link rel="stylesheet" href="css/icomoon-icons.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Easy Responsive Tabs -->
+		<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+		<!-- Theme Style -->
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/about.css">
+
+
+	
+
+
+
+	</head>
+	<body>
+		
+		
+		 <header id="fh5co-header" role="banner">
+			<!-- Logo -->
+
+		<div>
+				<section class="hero-section">
+	
+						<!-- Logo -->
+							
+							<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							
+				<!-- Logo -->
+			
+			
+				
+		
+			   <!-- Main Nav -->
+				<!-- Start Nav Section -->
+			<nav id="navbar" class="navbar">
+			<ul class="nav-menu" >
+				<li>
+				<a data-scroll="home" href="index.html" class="dot ">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="about" href="about.html" class="dot">
+					<span>About me</span>
+				</a>
+				</li>
+				<li>
+					<a data-scroll="services" href="project.html" class="dot active">
+						<span>Projects</span>
+					</a>
+				</li>
+
+				<li>
+				<a data-scroll="contact" href="contact.html" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+			</nav>
+			   <!-- Main Nav -->
+			   </section>
+
+			</div>
+		
+	</header>
+
+
+
+		<main role="main">
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+		<!-- Start Intro -->
+		<div class="container text-center">
+			<h4>FEMICIDE DASHBOARD</h4>
+		</div>
+			<!-- End Intro -->
+
+
+
+
+		<!-- Text -->
+		<div class="container">
+		<div class="col-md-12-center">
+            <p>Collecting femicide data via web scraping, analyzing and visualizing it with a dynamic dashboard.</p>
+				
+				
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+<p>Required libraries are imported.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import numpy as np
+import plotly.express as px 
+from app import app
+import dash
+import dash_html_components as html
+import dash_core_components as dcc
+from dash.dependencies import Input, Output
+import plotly.graph_objects as go
+import plotly.express as px
+from numpy.core.fromnumeric import sort
+from jupyter_dash import JupyterDash
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+<a>web_scraping.ipynb</a>
+
+<p>This is a Python code that uses the requests library to send a GET request to a specified URL and the BeautifulSoup library to parse the HTML response. The code then creates an empty list and appends the href attribute of all “a” tags with the class “html5lightbox” to the list. </p>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>url = "........"
+req = requests.get(url)
+soup = BeautifulSoup(req.text, "html.parser")
+liste=list()
+for link in soup.find_all("a",attrs={"class":"html5lightbox"}):
+    link=link.get('href')
+    liste.append([link])
+del liste[0:2]
+print(liste)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>This is a Python code that uses the pandas library to create a DataFrame with the specified columns.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df=pd.DataFrame(columns=["Ad Soyad","Maktülün Yaşı","İl/ilçe","Tarih","Öldürülme Sebebi","Fail","Korunma Talebi","Öldürülme Şekli","Failin Durumu"])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>This code iterates over the elements of the “liste” list and sends a GET request to a URL constructed using the element’s value. The HTML response is then parsed using BeautifulSoup and the “body” tag is extracted. An empty list “ls” is created and personal information is extracted from the “body” tag and appended to the list. If the current index is 439, only 6 pieces of personal information are extracted and a dictionary is created with the extracted information.There is missing data for 439 rows. A new row is then created from the dictionary and appended to the DataFrame “df”. If the current index is not 439, 9 pieces of personal information are extracted and a dictionary is created with the extracted information. A new row is then created from the dictionary and appended to the DataFrame “df”.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>for i in range(0,len(liste)):
+    
+    url= "........details.aspx?id="+str(liste[i]).split("=")[1].rstrip("']")
+    response=requests.get(url)
+    html_icerigi=response.content
+    soup=BeautifulSoup(html_icerigi,"html.parser")
+    isim=soup.find("body")
+    ls=list()
+    if i==439:
+        for k in range(0,6):
+            
+            kisisel_bilgiler=str(isim).split("<br/>")[k].split("</b>")[1].strip(" ")
+            ls.append(kisisel_bilgiler)
+        
+        
+        my_dict = [{"Ad Soyad":ls[0],"Maktülün Yaşı":"NAN","İl/ilçe":"NAN","Tarih":ls[1],"Öldürülme Sebebi":ls[2],"Fail":ls[3],"Korunma Talebi":ls[4],"Öldürülme Şekli":ls[5],"Failin Durumu":"NAN"}]
+        df_new_row=pd.DataFrame.from_records(my_dict,index=[i])
+        df=pd.concat([df, df_new_row])
+    else:
+        for m in range(0,9):
+            
+            kisisel_bilgiler=str(isim).split("<br/>")[m].split("</b>")[1].strip(" ")
+            ls.append(kisisel_bilgiler)
+        
+        
+        my_dict = [{"Ad Soyad":ls[0],"Maktülün Yaşı":ls[1],"İl/ilçe":ls[2],"Tarih":ls[3],"Öldürülme Sebebi":ls[4],"Fail":ls[5],"Korunma Talebi":ls[6],"Öldürülme Şekli":ls[7],"Failin Durumu":ls[8]}]
+        df_new_row=pd.DataFrame.from_records(my_dict,index=[i])
+        df=pd.concat([df, df_new_row])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>The dataframe is saved and then read. The last 50 values ​​are observed. Info information is requested for the dataframe.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df.to_csv("women.csv", encoding='utf-8', index=False)
+</code></pre>
+</div>
+</div>		
+<a>analysis.ipynb</a>		
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df = pd.read_csv("women.csv")
+df.tail(50)
+</code></pre>
+</div>
+</div>
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/f1.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>		
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df.info()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>pd.DataFrame({'Total missing values':df.isna().sum(),
+              'Percentage':(df.isna().sum()/len(df))*100})
+</code></pre>
+</div>
+</div>	
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/f2.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>			
+<!-- End Pre Code -->
+<p>The code first selects rows where the value in the specified column is NaN and then fills the missing values in those rows with the value “Bilinmiyor”.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df[df['Korunma Talebi'].isna()==True]=df.loc[df['Korunma Talebi'].isna()==True].fillna("Bilinmiyor")
+df[df['Failin Durumu'].isna()==True]=df.loc[df['Failin Durumu'].isna()==True].fillna("Bilinmiyor")
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>The latitude and longitude information of the cities in Turkey are read from the excel file and combined with the df dataframe and saved.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>dfMap = pd.read_csv("tr.csv")
+dfMap
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/f3.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>dfMap.columns=["İl/ilçe","Enlem","Boylam"]
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df=df.merge(dfMap, how='inner', on='İl/ilçe')
+df.to_csv("merge.csv", encoding='utf-8', index=False)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<a>dashboard.ipynb</a>
+<p>This code reads a CSV file named “merge.csv” into a DataFrame “df”. A new column “Yıl” is then created by extracting the year from the “Tarih” column. The values in the “Yıl” column are then converted to integers. Rows where the value in the “Yıl” column is less than 2019 are then dropped from the DataFrame. The unique values in the “İl/ilçe” column are then extracted and sorted. The sorted values are then appended to a list “city_list”. The unique values in the “Yıl” column are then extracted and appended to a list “year_list”.</p>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>df = pd.read_csv("merge.csv")
+f = lambda x: (x["Tarih"].split('/'))[2]
+df["Yıl"] = df.apply(f, axis=1)
+df["Yıl"]=df["Yıl"].astype('int')
+
+df.drop(df[df.Yıl < 2019].index, inplace=True)
+
+city_dropdown = df['İl/ilçe'].unique()
+city_dropdown=sort(city_dropdown)
+
+city_list=list()
+for i in city_dropdown:
+  city_list.append(i)
+
+year_dropdown = df['Yıl'].unique()
+year_list=list()
+
+for i in year_dropdown:
+  year_list.append(i)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>This code sets the server attribute of the Flask app to the app’s server attribute and sets the suppress_callback_exceptions attribute of the app’s config object to True. The code then creates a JupyterDash app with an external stylesheet and defines styles for tabs and the tabs container.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>server = app.server
+app.config.suppress_callback_exceptions = True
+app = JupyterDash(__name__,external_stylesheets=["https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-grid.min.css"])
+tabs_styles = {"height": "5%","width": "2%"}
+tabs_container_styles = {"width": "48%", "height": "%45"}
+</code></pre>
+</div>
+</div>		
+
+<p>This code sets the layout of the JupyterDash app to a Div containing an H1 heading and a Container with several Rows and Columns. The first Row contains a RangeSlider and an H4 heading. The second Row contains a Dropdown and an H2 heading. The third Row contains two Graphs. The fourth Row contains a Tabs component and an H4 heading. </p>
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>app.layout = html.Div(
+                                children=[
+                                    
+                                        html.H1('2019 - 2023 KADIN CİNAYETLERİ ♀️  ',
+                                        style={'textAlign': 'center',
+                                               'font-size': 40}),
+                                            
+                                    dbc.Container([
+ 
+                                                dbc.Row([
+                                                    
+                                                    dbc.Col(dcc.RangeSlider(marks={i: '{}'.format(i) for i in range(2019,2024,1)},
+                                                            value=[df["Yıl"].min(),df["Yıl"].max()],
+                                                            dots=False,
+                                                            step=10,
+                                                            id='year_slider')),
+                                                         
+                                                    dbc.Col(html.H4("TOPLAM ÖLDÜRÜLEN KADIN SAYISI",style={"textAlign":"center", "width":"98%","background-color":"#0C0B22","padding":"4%"}))
+
+                                                ]),
+                                                dbc.Row([
+                                                    
+                                                    dbc.Col(dcc.Dropdown(
+                                                                        id = 'citydrop',
+                                                                        placeholder = 'İl Seçiniz',
+                                                                        searchable = True, 
+                                                                        options=city_list,
+																		value='İstanbul')),
+                                                         
+                                                    dbc.Col(html.H2(df.shape[0],style={"textAlign":"center", "width":"98%","background-color":"#0C0B22","margin-top":"0px","padding":"2%"}))
+
+                                                ]),
+
+                                                dbc.Row([
+                                                                                      
+                                                    dbc.Col(dcc.Graph(id="pieyear")),
+                                                    dbc.Col(dcc.Graph(id="piecity"))
+
+                                                ]),
+                                                
+                                                dbc.Row([
+                                                    
+                                                    dbc.Col(
+                                                            dcc.Tabs(id='tab', value='tab-1', children=[
+                                                            dcc.Tab(label='Maktülün Yaşı', value='tab-1'),
+                                                            dcc.Tab(label='Öldürülme Sebebi', value='tab-2'),
+                                                            dcc.Tab(label='Fail', value='tab-3',style={"margin":"0px"}),
+                                                            dcc.Tab(label='Korunma Talebi', value='tab-4'),
+                                                            dcc.Tab(label='Öldürülme Şekli', value='tab-5'),
+                                                            dcc.Tab(label='Failin Durumu', value='tab-6'),
+                                                        ],style={"hight": "49%" ,"hight": "49%","margin-top":"2%"})),
+
+                                                dbc.Col(html.H4("KONUM BİLGİSİNE GÖRE CİNAYET BİLGİLERİ",style={"textAlign":"center", "width":"98%","background-color":"#0C0B22","padding":"1%","margin-top":"10%"}))
+                                                    
+                                                    ]),
+
+                                                dbc.Row([
+
+                                                         dbc.Col(html.Div(id='tabs-example-content-1')),
+                                                         dbc.Col(dcc.Graph(id="map"),style={"padding-top":"60px"})
+                                                    
+                                                    ]),
+													                                            ], fluid=True),
+
+                                 ],style={"color":"rgb(178,24,43)","background-color":"#010914"}
+)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>This code defines a callback function for the JupyterDash app. The function takes two inputs: the value of the “tab” component and the value of the “year_slider” component. The function outputs to the “children” property of the “tabs-example-content-1” component.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>@app.callback(
+    Output('tabs-example-content-1', 'children'),
+    [Input('tab', 'value'),
+     Input("year_slider","value")],
+)</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Defines the render_content function which takes two arguments: the value of the “tab” component and the value of the “year_slider” component. The function checks the value of the “tab” argument and returns a Div containing an H3 heading and a Graph. The data for the Graph is obtained from the DataFrame “df” by filtering rows based on the values of the “Yıl” column and counting the values in a specified column. The type of graph and the column used for counting values depend on the value of the “tab” argument.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def render_content(tab,year_slider):
+    low, high = year_slider
+    if tab == 'tab-1':
+        return html.Div([
+            html.H3('Yıl Bilgisine Göre Maktülün Yaşı'),
+            dcc.Graph(
+                figure=dict(
+                    data=[
+                        dict(
+                        x=df[df["Yıl"].between(low,high)]['Maktülün Yaşı'].value_counts().index,
+                        y=df[df["Yıl"].between(low,high)]['Maktülün Yaşı'].value_counts().values,
+                        type='bar',
+                        marker = { "color" : px.colors.sequential.RdBu},
+                        
+                    )]
+                )
+            )
+        ])
+
+    elif tab == 'tab-2':
+        return html.Div([
+            html.H3('Yıl Bilgisine Göre İlk 10 Öldürülme Sebebi'),
+            dcc.Graph(
+                figure=dict(
+                    data=[
+                        dict(
+                        x=df[df["Yıl"].between(low,high)]['Öldürülme Sebebi'].value_counts().head(10).index,
+                        y=df[df["Yıl"].between(low,high)]['Öldürülme Sebebi'].value_counts().head(10).values,
+                        type='bar',
+                        marker = { "color" : px.colors.sequential.RdBu},
+                    )]
+                )
+            )
+        ])
+		    elif tab == 'tab-3':
+        return html.Div([
+            html.H3('Yıl Bilgisine Göre İlk 10 Fail'),
+            dcc.Graph(
+                figure=dict(
+                    data=[
+                        dict(
+                        x=df[df["Yıl"].between(low,high)]['Fail'].value_counts().head(10).index,
+                        y=df[df["Yıl"].between(low,high)]['Fail'].value_counts().head(10).values,
+                        type='bar',
+                        marker = { "color" : px.colors.sequential.RdBu},
+                    )]
+                )
+            )
+        ])
+
+    elif tab == 'tab-4':
+        return html.Div([
+            html.H3('Yıl Bilgisine Göre Korunma Talebi'),
+            dcc.Graph(
+                figure=dict(
+                    data=[
+                        dict(
+                        x=df[df["Yıl"].between(low,high)]['Korunma Talebi'].value_counts().index,
+                        y=df[df["Yıl"].between(low,high)]['Korunma Talebi'].value_counts().values,
+                        type='bar',
+                        marker = { "color" : px.colors.sequential.RdBu},
+                    )]
+                )
+            )
+        ])
+	    elif tab == 'tab-5':
+        return html.Div([
+            html.H3('Yıl Bilgisine Göre İlk 10 Öldürülme Şekli'),
+            dcc.Graph(
+                figure=dict(
+                    data=[
+                        dict(
+                        x=df[df["Yıl"].between(low,high)]['Öldürülme Şekli'].value_counts().head(10).index,
+                        y=df[df["Yıl"].between(low,high)]['Öldürülme Şekli'].value_counts().head(10).values,
+                        type='bar',
+                        marker = { "color" : px.colors.sequential.RdBu},
+                    )]
+                )
+            )
+        ])
+
+    elif tab == 'tab-6':
+        return html.Div([
+            html.H3('Yıl Bilgisine Göre Failin Durumu'),
+            dcc.Graph(
+                figure=dict(
+                    data=[
+                        dict(
+                        x=df[df["Yıl"].between(low,high)]['Failin Durumu'].value_counts().index,
+                        y=df[df["Yıl"].between(low,high)]['Failin Durumu'].value_counts().values,
+                        type='bar',
+                        marker = { "color" : px.colors.sequential.RdBu},
+                    )]
+                )
+            )
+        ])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>Defines a callback function for the JupyterDash app. The function takes two inputs: the value of the “citydrop” component and the value of the “year_slider” component. The function outputs to the “figure” property of the “map” component</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>@app.callback(
+    Output("map", "figure"), 
+    [Input("citydrop", "value"), 
+    Input("year_slider","value")],
+    )
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>defines the map_chart function which takes two arguments: the value of the “citydrop” component and the value of the “year_slider” component. The function checks if the size of the DataFrame “df” filtered by the values of the “İl/ilçe” and “Yıl” columns is equal to 0. If it is, the latitude and longitude values for Istanbul are extracted from the DataFrame. If it is not, the latitude and longitude values for the specified city are extracted from the DataFrame. A scatter_mapbox plot is then created using the plotly.express library with the specified latitude and longitude columns and center. The figure is then updated to remove margins and returned.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def map_chart(citydrop,year_slider):
+    low, high = year_slider
+
+    if (df[(df["İl/ilçe"]==citydrop) &  (df["Yıl"].between(low, high))].size)==0:
+
+      Enlem=df[(df["İl/ilçe"]=="İstanbul") &  (df["Yıl"]==2023)].index[0]
+      Enlem=df.loc[Enlem].Enlem_x
+
+      Boylam=df[(df["İl/ilçe"]=="İstanbul") &  (df["Yıl"]==2023)].index[0]
+      Boylam=df.loc[Boylam].Boylam_x
+
+    else:
+    
+      Enlem=df[(df["İl/ilçe"]==citydrop) &  (df["Yıl"].between(low, high))].index[0]
+      Enlem=df.loc[Enlem].Enlem_x
+
+      Boylam=df[(df["İl/ilçe"]==citydrop) &  (df["Yıl"].between(low, high))].index[0]
+      Boylam=df.loc[Boylam].Boylam_x
+
+    figure = px.scatter_mapbox(df, lat='Enlem_x', lon='Boylam_x',
+                        center = dict(lat = Enlem	, lon = Boylam), # This is the coordinate of San Francisco..
+                        zoom = 8,                                # Zoom of the map
+                        opacity = .9,
+                        title = 'Konuma Göre Cinayet Bilgileri ',
+                        mapbox_style="stamen-toner",
+                        color_continuous_scale=px.colors.sequential.Rainbow, 
+                                      
+                        hover_data = ["Ad Soyad","Maktülün Yaşı","İl/ilçe","Tarih","Öldürülme Sebebi","Fail","Korunma Talebi","Öldürülme Şekli","Failin Durumu"]
+                        )
+
+    figure.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    
+    return figure
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>Defines a callback function for the JupyterDash app. The function takes one input: the value of the “year_slider” component. The function outputs to the “figure” property of the “pieyear” component.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>@app.callback(
+    Output("pieyear", "figure"),
+    [
+     Input("year_slider","value")]
+)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>This code defines the pie_chart function which takes one argument: the value of the “year_slider” component. The function creates two lists: “ls_values” and “ls_index”. The values and indices of the value counts of the “Yıl” column of the DataFrame “df” filtered by the values of the “Yıl” column are appended to the lists. A pie chart is then created using the plotly.express library with the specified values and names. The figure is then updated to add a button for switching between pie and bar charts and to change the background color and font colors. The figure is then returned.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def pie_chart(year_slider):
+  low, high = year_slider
+
+  ls_values=list()
+  ls_index=list()
+
+  for i in df[df["Yıl"].between(low,high)]['Yıl'].value_counts().values:
+    ls_values.append(i)
+  for i in df[df["Yıl"].between(low,high)]['Yıl'].value_counts().index:
+    ls_index.append(i)
+
+  fig = px.pie(df, values=ls_values, names=ls_index, hole=.3,color_discrete_sequence=px.colors.sequential.RdBu,title='Yıl Bilgisine Göre Toplam Cinayet')
+  fig.update_layout(
+    updatemenus=[
+        dict(
+            type="buttons",
+            direction="left",
+            buttons=list([
+                dict(
+                    args=["type", "pie"],
+                    label="Pie Chart",
+                    method="restyle"
+                ),
+                dict(
+                    args=["type", "bar"],
+                    label="Bar Chart",
+                    method="restyle",
+                    
+                )
+            ]),
+        ),
+    ]
+)
+  
+  fig.update_layout({
+  'paper_bgcolor': '#0C0B22',
+  "font_color":"rgb(178,24,43)",
+  "title_font_color":"white",
+  "legend_title_font_color":"white",
+        })
+  
+  return fig
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Defines a callback function for the JupyterDash app. The function takes two inputs: the value of the “citydrop” component and the value of the “year_slider” component. The function outputs to the “figure” property of the “piecity” component.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>@app.callback( 
+    Output("piecity", "figure"),
+    [Input("citydrop","value"),
+    Input("year_slider","value")]
+    )
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Defines the pie_chart function which takes two arguments: the value of the “citydrop” component and the value of the “year_slider” component. The function creates two lists: “ls_values” and “ls_index”. The values and indices of the top 20 value counts of the “İl/ilçe” column of the DataFrame “df” filtered by the values of the “Yıl” column are appended to the lists. A pie chart is then created using the plotly.express library with the specified values and names. The figure is then updated to add a button for switching between pie and bar charts and to change the background color and font colors. The figure is then returned.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def pie_chart(citydrop,year_slider):
+  low,high=year_slider
+  ls_values=list()
+  ls_index=list()
+
+  for i in df[df["Yıl"].between(low,high)]['İl/ilçe'].value_counts().head(20).values:
+    ls_values.append(i)
+  for i in df[df["Yıl"].between(low,high)]['İl/ilçe'].value_counts().head(20).index:
+    ls_index.append(i)
+
+  #figure = px.line(df, x=ls_index, y=ls_values, title='Life expectancy in Canada')
+  fig = px.pie(df, values=ls_values, names=ls_index, hole=.3,color_discrete_sequence=px.colors.sequential.RdBu,title='Konum Bilgisine Göre Toplam Cinayet')
+
+  fig.update_layout(
+    updatemenus=[
+        dict(
+            type="buttons",
+            direction="left",
+            buttons=list([
+                dict(
+                    args=["type", "pie"],
+                    label="Pie Chart",
+                    method="restyle"
+                ),
+                dict(
+                    args=["type", "bar"],
+                    label="Bar Chart",
+                    method="restyle",                    
+                )
+            ]),
+        ),
+    ]
+)
+  fig.update_layout({
+  #'plot_bgcolor': 'rgba(15,15,15, 0.1)',
+  'paper_bgcolor': '#0C0B22',
+  "font_color":"rgb(178,24,43)",
+  "title_font_color":"white",
+  "legend_title_font_color":"white",
+  
+  })
+  
+  return fig
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># Run the app
+if __name__ == '__main__':
+    app.run_server()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+
+
+
+
+
+<div class="col-md-12" align="right"><a href="https://github.com/Reyhandede/femicide-dashboard" target="_blank">GitHub</a></div>
+
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+		<div id="fh5co-work">
+					<div class="col-md-6 col-sm-6 col-xs-6" align="left">
+						<a href="post_ds10.html" target="_self" >&#171; Previous</a>
+					</div>	
+
+					<div class="col-md-6 col-sm-6 col-xs-6" align="right">
+						<a href="post_ds8.html" target="_self">Next &#187;</a>
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-md"></div>
+		<div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+			
+		
+		<!-- Go To Top -->
+		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+
+
+
+
+
+
+
+
+
+		
+			
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+		<script src="js/google_map.js"></script>
+
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

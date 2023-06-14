@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+ <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+ <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+ <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+ <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Reyhan Dede</title>
+
+
+
+		<style>
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			#particles-js
+			{
+				width:100%;
+				height: 100vh;
+				background-image: url("");
+				position: relative;
+				bottom: 0%;
+
+			}
+
+			h2
+			{
+				position: absolute;
+				top:30%;
+				left:10%;
+				right: 10%;
+				text-align: center;
+				font-size: larger;
+
+
+			}
+
+
+			h6
+			{
+				position: absolute;
+				top:40%;
+				left:10%;
+				right: 10%;
+                font-size: large;
+
+			}
+
+		</style>
+
+	
+
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="Logo.png">
+
+		<!-- Google Webfont -->
+		<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Icomoon Icons -->
+		<link rel="stylesheet" href="css/icomoon-icons.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Easy Responsive Tabs -->
+		<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+		<!-- Theme Style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/about.css">
+
+
+	
+
+
+
+	</head>
+	<body>
+		
+		
+		 <header id="fh5co-header" role="banner">
+			<!-- Logo -->
+
+		<div>
+				<section class="hero-section">
+	
+						<!-- Logo -->
+							
+							<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							
+				<!-- Logo -->
+			
+			
+				
+		
+			   <!-- Main Nav -->
+				<!-- Start Nav Section -->
+			<nav id="navbar" class="navbar">
+			<ul class="nav-menu" >
+				<li>
+				<a data-scroll="home" href="index.html" class="dot ">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="about" href="about.html" class="dot">
+					<span>About me</span>
+				</a>
+				</li>
+				<li>
+					<a data-scroll="services" href="project.html" class="dot active">
+						<span>Projects</span>
+					</a>
+				</li>
+
+				<li>
+				<a data-scroll="contact" href="contact.html" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+			</nav>
+			   <!-- Main Nav -->
+			   </section>
+
+			</div>
+		
+	</header>
+
+
+		<main role="main">
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+		<!-- Start Intro -->
+		<div class="container text-center">
+			<h4>ChatGPT API</h4>
+		</div>
+			<!-- End Intro -->
+
+		<!-- Text -->
+		<div class="container">
+		<div class="col-md-12-center">
+			<p>Product data was extracted from the real estate website by web scraping method.Edited and obtained stunning product description data for the product with Chat Gbt api.</p>				
+				
+
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+<p>Required libraries are imported.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import pandas as pd
+import numpy as np
+import requests
+from bs4 import BeautifulSoup
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+import xgboost as xgb
+from xgboost import XGBRegressor
+from sklearn.model_selection import train_test_split, GridSearchCV,cross_val_score
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn import model_selection
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+
+<p>This code creates an empty list “List” and iterates over the numbers from 1 to 13. For each number, a URL is constructed by appending the number to a base URL. A GET request is then sent to the constructed URL and the HTML response is parsed using BeautifulSoup. The text of all “span” tags with the class “portfoy-no” is then extracted, split by the “:” character, and the second element of the resulting list is appended to the “List” list. After all iterations are complete, the “List” list is printed.</p>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>List=list()
+for i in range(1,14):
+  url = "https://www.remax.com.tr/konut/kiralik/istanbul-avrupa"+"?page"+str(i)
+  
+  req = requests.get(url)
+  soup = BeautifulSoup(req.text, "html.parser")
+  for link in soup.find_all("span",attrs={"class":"portfoy-no"}):
+      link=link.text.split(":")[1]
+      List.append([link])
+print(List)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>DataFrame saves "df" in a CSV file named "remax.csv" using utf-8 encoding.<p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>
+df.to_csv("remax.csv", encoding='utf-8', index=False)
+df.head()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/c1.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>	
+
+
+<p>It creates an empty string "textPro" and iterates numbers from 1 to the number of columns in the "df" DataFrame. For each number, the corresponding column name and value in the first row of the DataFrame are extracted and appended to the string "textPro" with some formatting. After all iterations are complete, the trailing space and comma characters in the string "textPro" are removed.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>textPro=""
+for i in range(1,len(df.columns)):
+  textPro+=df.columns[i]+" : "+df.iloc[0:1].values[0][i]+", "
+textPro=textPro.rstrip(" ").rstrip(",")
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>It uses the pip command to install the openai library. The operating system and openai libraries are then imported.</p>	
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>!pip install openai
+import os
+import openai
+</code></pre>
+</div>
+</div>		
+<p>Sets the openai library's api_key attribute to an empty string and calls the Completion class's create method to generate text using the specified pattern and prompt. Temperature, max_tokens, top_p, Frequency_penalty, and Presence_Penalty parameters are also specified. The response from the Create method is then printed.</p>		
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>openai.api_key = ""
+response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="Emlak e-ticaret sitesinde yayınlamak üzere bu ürün için yaratıcı bir reklam yazın:\n\nÜrün:"+textPro,
+  temperature=0.5,
+  max_tokens=400,
+  top_p=1.0,
+  frequency_penalty=0.0,
+  presence_penalty=0.0
+)
+print(response)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>Extracts text from the first selection in the response object and assigns it to a variable. The code then reads a CSV file named "remax.csv" into a DataFrame "remaxdf" and displays the first 5 rows of the DataFrame using the head method. The info method is then called on the DataFrame to display information about the DataFrame.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>response.choices[0].text
+remaxdf = pd.read_csv("remax.csv")
+remaxdf.head()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/c2.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>	
+
+<p>Creates a DataFrame with two columns: "Total missing values" and "Percentage". The values ​​in the "Total missing values" column are obtained by calling the isna and sum methods on the "remaxdf" DataFrame. The values ​​in the "Percent" column are obtained by dividing the values ​​in the "Total missing values" column by the DataFrame length "df" and multiplying by 100.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>pd.DataFrame({'Total missing values':remaxdf.isna().sum(),
+              'Percentage':(remaxdf.isna().sum()/len(df))*100})
+</code></pre>
+</div>
+</div>	
+
+<p>"remaxdf" defines three lambda functions that split the "Konum" column of the DataFrame with the "/" character and return the first, second, and third items of the result list, respectively. The Apply method is then called in the "remaxdf" DataFrame with each lambda function and axis argument set to 1 to create three new columns in the DataFrame: "İl", "İlçe" and "Mahalle". The values ​​in these columns are obtained by applying the corresponding lambda function to each row of the DataFrame.</p>		
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>f = lambda x: (x["Konum"].split('/'))[0]
+remaxdf["İl"]=remaxdf.apply(f, axis=1)
+f = lambda x: (x["Konum"].split('/'))[1]
+remaxdf["İlçe"]=remaxdf.apply(f, axis=1)
+f = lambda x: (x["Konum"].split('/'))[2]
+remaxdf["Mahalle"]=remaxdf.apply(f, axis=1)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>Drops the "Konum" column from the "remaxdf" DataFrame using the drop method with the columns argument set to a list containing the string "Konum".</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>remaxdf=remaxdf.drop(columns=['Konum'])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>Trying to apply lambda function to Price column to divide values ​​by Turkish Lira symbol (₺) and keep only the first part of the division. Then you display the first 5 rows of the DataFrame obtained using the head() method.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>f = lambda x: (x["Fiyat"].split('₺'))[0]
+remaxdf["Fiyat"]=remaxdf.apply(f, axis=1)
+remaxdf.head()
+</code></pre>
+</div>
+</div>
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/c4.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>	
+<p>
+Creating a copy of the remaxdf DataFrame and assigning it to a new variable copy df. Then you’re using the drop method to remove the columns No and İl from copy df.</p>			
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>copydf=remaxdf.copy()
+copydf=copydf.drop(columns=["No","İl"])
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Creating a list called objList and assigning some array values ​​to it.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>objList =['İlçe','Mahalle','Emlak Tipi',
+       'Oda Sayısı', 'Bina Yaşı', 'Kat Sayısı', 'Isıtma',
+       'Banyo Sayısı', 'Balkon Sayısı', 'Eşya Durumu', 'Kullanım Durumu',
+       'Site İçerisinde Mi','Bulunduğu Kat']
+objList
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Used the LabelEncoder class from the scikit-learn library to encode values ​​in the columns specified in the objList of the Copydf DataFrame. I did this by iterating over each column name in the objList, fitting and transforming the LabelEncoder to the column values. After that I used the drop method to remove the rows from copydf where the value in the m2 (Brüt) column is "Daire".</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>le = LabelEncoder()
+for i in objList:
+  copydf[i] = le.fit_transform(copydf[i])
+
+copydf.drop(copydf[copydf['m2 (Brüt)']=="Daire"].index,inplace=True)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>Converting the data type of the m2 (Brüt) column to int and the data type of the Fiyat column to float in the copydf DataFrame.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>copydf['m2 (Brüt)']=copydf['m2 (Brüt)'].astype(str).astype(int)
+copydf['Fiyat']=copydf['Fiyat'].astype(str).astype(float)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<p>Calculation of the correlation matrix of the Copydf DataFrame using the corr method and assigning it to a variable named corr_matrix. Next, I used the shape function from the matplotlib.pyplot library to create a new shape of the specified size. After that, I used the heatmap function from the seaborn library to generate a heatmap of the correlation matrix and demonstrated this using the annot parameter to show the correlation values.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>corr_matrix = copydf.corr()
+plt.figure(figsize=(10,10))
+sns.heatmap(corr_matrix, annot=True)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/remax.png" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<p>I thought it would be nice to use the MATLAB Regression Learner Toolbox to evaluate the training and test results in 28 models to estimate the price with regression. For the XGBRegression model, which I found the best result, I separated the data as training and test data. By finding the most suitable parameters, I trained the model and tested it.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>copydf.to_csv("remaxmatlab.csv", encoding='utf-8', index=False)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>testdf = pd.read_csv("resultsTableTest.csv")
+testdf.tail(28)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/c5.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>y = copydf["Fiyat"]
+X = copydf.drop(["Fiyat"], axis = 1)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.10, random_state = 144)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>params = {"colsample_bytree":[0.4,0.5,0.6],
+         "learning_rate":[0.01,0.02,0.09],
+         "max_depth":[2,3,4,5,6],
+         "n_estimators":[100,200,500,2000]}
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>xgb = XGBRegressor()
+grid = GridSearchCV(xgb, params, cv = 10, n_jobs = -1, verbose = 2)
+grid.fit(X_train, y_train)
+grid.best_params_
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>xgbparams = XGBRegressor(colsample_bytree = 0.5, learning_rate = 0.09, max_depth = 6, n_estimators = 200)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/c6.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>model_xgb.score(X_train, y_train)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>model_xgb.score(X_test, y_test)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/c7.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+
+
+
+
+<div class="col-md-12" align="right"><a href="https://github.com/Reyhandede/chat-gpt-api-/blob/main/remax.ipynb" target="_blank">GitHub</a></div>
+
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+
+		<div id="fh5co-work">
+					<div class="col-md-6 col-sm-6 col-xs-6" align="left">
+						<a href="post_ds10.html" target="_self" >&#171; Previous</a>
+					</div>	
+
+					<div class="col-md-6 col-sm-6 col-xs-6" align="right">
+						<a href="post_ds8.html" target="_self">Next &#187;</a>
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-md"></div>
+		<div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+			
+		
+		<!-- Go To Top -->
+		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+
+
+
+
+
+
+
+
+
+		
+			
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+		<script src="js/google_map.js"></script>
+
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

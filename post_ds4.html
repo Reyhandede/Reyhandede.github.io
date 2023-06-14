@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+ <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+ <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+ <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+ <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Reyhan Dede</title>
+
+
+
+		<style>
+			*
+			{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			#particles-js
+			{
+				width:100%;
+				height: 100vh;
+				background-image: url("");
+				position: relative;
+				bottom: 0%;
+
+			}
+
+			h2
+			{
+				position: absolute;
+				top:30%;
+				left:10%;
+				right: 10%;
+				text-align: center;
+				font-size: larger;
+
+
+			}
+
+
+			h6
+			{
+				position: absolute;
+				top:40%;
+				left:10%;
+				right: 10%;
+                font-size: large;
+
+			}
+
+		</style>
+
+	
+
+		<!-- Facebook and Twitter integration -->
+		<meta property="og:title" content=""/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:site_name" content=""/>
+		<meta property="og:description" content=""/>
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:url" content="" />
+		<meta name="twitter:card" content="" />
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="Logo.png">
+
+		<!-- Google Webfont -->
+		<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+		<!-- Themify Icons -->
+		<link rel="stylesheet" href="css/themify-icons.css">
+		<!-- Icomoon Icons -->
+		<link rel="stylesheet" href="css/icomoon-icons.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<!-- Easy Responsive Tabs -->
+		<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+		<!-- Theme Style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/about.css">
+
+	</head>
+	<body>
+		
+		 <header id="fh5co-header" role="banner">
+			<!-- Logo -->
+
+		<div>
+				<section class="hero-section">
+	
+						<!-- Logo -->
+							
+							<!-- Mobile Toggle Menu Button -->
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+							
+				<!-- Start Nav Section -->
+			<nav id="navbar" class="navbar">
+			<ul class="nav-menu" >
+				<li>
+				<a data-scroll="home" href="index.html" class="dot ">
+					<span>Home</span>
+				</a>
+				</li>
+				<li>
+				<a data-scroll="about" href="about.html" class="dot">
+					<span>About me</span>
+				</a>
+				</li>
+				<li>
+					<a data-scroll="services" href="project.html" class="dot active">
+						<span>Projects</span>
+					</a>
+				</li>
+
+				<li>
+				<a data-scroll="contact" href="contact.html" class="dot">
+					<span>Contact</span>
+				</a>
+				</li>
+			</ul>
+			</nav>
+			   <!-- Main Nav -->
+			   </section>
+
+			</div>
+		
+	</header>
+
+
+		<main role="main">
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+		<!-- Start Intro -->
+		<div class="container text-center">
+			<h4>CERVICAL CANCER IMAGE PROCESSING</h4>
+		</div>
+			<!-- End Intro -->
+		<!-- Text -->
+		<div class="container">
+		<div class="col-md-12-center">
+		<p>Detection and classification of cervical cancer images by transfer learning method.</p>		
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+
+<p>Required libraries are imported.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>import cv2
+import os
+import shutil 
+import math
+import random
+import numpy as np
+import pandas as pd 
+import matplotlib.pyplot as plt
+import warnings
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+from keras.applications import imagenet_utils
+import tensorflow
+from keras.applications.densenet import DenseNet201
+from keras.applications.nasnet import NASNetMobile
+from keras.applications.mobilenet_v2 import MobileNetV2
+from keras.applications.inception_resnet_v2 import InceptionResNetV2
+from keras.applications.resnet_v2 import ResNet152V2
+from keras.applications.vgg19 import VGG19
+#from keras.applications.efficientnet_v2 import EfficientNetV2L
+from keras.applications.efficientnet import EfficientNetB7
+from sklearn.metrics import accuracy_score
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
+from tensorflow.keras import layers
+from keras.layers import Dense,Conv2D, Flatten, MaxPool2D, Dropout
+from keras.models import Sequential
+from keras.preprocessing import image
+from keras.callbacks import ModelCheckpoint
+from keras.models import load_model
+from keras.callbacks import EarlyStopping
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+<p>I suppressed warnings in Python.</p>
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>warnings.filterwarnings("ignore")
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>The function takes in three arguments: dataset_src, dataset_dest, and classes. It creates new directories for cropped and complete images for each class in the destination directory. Then, it resizes and applies median filtering and histogram equalization to the images before saving them in the new directories.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def FormatDataset(dataset_src, dataset_dest, classes):
+    # Making a Copy of Dataset
+    new_cropped_dest = [os.path.join(dataset_dest, cls, 'CROPPED') for cls in classes];
+    new_complete_dest = [os.path.join(dataset_dest, cls, 'COMPLETE') for cls in classes];
+    cropped_src = [ dataset_src + "/im_" + cls + "/im_" + cls + "/CROPPED" for cls in classes ];
+    complete_src = [ dataset_src + "/im_" + cls + "/im_" + cls for cls in classes ];
+    for (dest1, dest2) in zip(new_cropped_dest, new_complete_dest):
+        os.makedirs(dest1);
+        os.makedirs(dest2);
+    # Formating Cropped Images
+    for (src,new_dest) in zip(cropped_src, new_cropped_dest):
+        for file in os.listdir(src):
+            filename, file_ext = os.path.splitext(file);
+            if file_ext == '.bmp':
+                img_des = os.path.join(new_dest, filename + '.jpg');
+                img = cv2.imread(os.path.join(src, file));
+                img = cv2.resize(img, (64, 64));
+                img_median = cv2.medianBlur(img,5 ) # Add median filter to image
+                img_yuv = cv2.cvtColor(img_median, cv2.COLOR_BGR2YUV)
+
+                # equalize the histogram of the Y channel
+                img_yuv[:,:,0] = cv2.equalizeHist(img_yuv[:,:,0])
+
+                # convert the YUV image back to RGB format
+                img = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)
+                cv2.imwrite(img_des ,img);
+    # Formatting Complete Images
+    for (src,new_dest) in zip(complete_src, new_complete_dest):
+        for file in os.listdir(src):
+            filename, file_ext = os.path.splitext(file);
+            if file_ext == '.bmp':
+                img_des = os.path.join(new_dest, filename + '.jpg');
+                img = cv2.imread(os.path.join(src, file));
+				img = cv2.resize(img, (256, 256));
+                img_median = cv2.medianBlur(img,5 ) # Add median filter to image
+                img_yuv = cv2.cvtColor(img_median, cv2.COLOR_BGR2YUV)
+
+                # equalize the histogram of the Y channel
+                img_yuv[:,:,0] = cv2.equalizeHist(img_yuv[:,:,0])
+
+                # convert the YUV image back to RGB format
+                img = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR);
+                cv2.imwrite(img_des ,img);
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># Source Location for Dataset
+src = '../input/cervical-cancer-largest-dataset-sipakmed';
+# Destination Location for Dataset
+dest = './CervicalCancer';
+# Image Classes
+classes = ["Dyskeratotic","Koilocytotic","Metaplastic","Parabasal","Superficial-Intermediate"];
+# Formatting Dataset
+FormatDataset(src, dest, classes);
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>Function that calculates the size of a dataset. The function takes in three arguments: path, classes, and main. It counts the number of files in the specified subdirectory (main) for each class and returns a dictionary with the number of images for each class.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>root_dir = "./CervicalCancer"
+classes = ["Dyskeratotic","Koilocytotic","Metaplastic","Parabasal","Superficial-Intermediate"]
+
+def GetDatasetSize(path, classes, main = "CROPPED"):
+    num_of_image = {}
+    for cls in classes:
+        # Counting the Number of Files in the Folder
+        num_of_image[cls] = len(os.listdir(os.path.join(path, cls, main)));
+    return num_of_image;
+print(GetDatasetSize(root_dir, classes, "COMPLETE"));
+</code></pre>
+</div>
+</div>
+<p>Function that splits a dataset into training, validation, and testing sets. The function takes in five arguments: root_dir, classes_dir, main, val_ratio, and test_ratio. It creates new directories for the training, validation, and testing sets for each class. Then, it shuffles the images and splits them into the three sets according to the specified ratios. Finally, it copies the images into their respective directories</p>	
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def TrainValTestSplit(root_dir, classes_dir, main = "CROPPED", val_ratio = 0.15, test_ratio = 0.15):
+    for cls in classes_dir:
+        # Creating Split Folders
+        os.makedirs('training/' + cls)
+        os.makedirs('testing/' + cls)
+        os.makedirs('validation/' + cls)
+    
+        # Folder to copy images from
+        src = os.path.join(root_dir, cls, main);
+
+        # Spliting the Files in the Given ratio
+        allFileNames = os.listdir(src)
+        np.random.shuffle(allFileNames)
+        train_FileNames, val_FileNames, test_FileNames = np.split(np.array(allFileNames), [int(len(allFileNames)* (1 - (val_ratio + test_ratio))), int(len(allFileNames)* (1 - test_ratio))])
+
+        train_FileNames = [src+'/'+ name for name in train_FileNames.tolist()]
+        val_FileNames = [src+'/' + name for name in val_FileNames.tolist()]
+        test_FileNames = [src+'/' + name for name in test_FileNames.tolist()]
+
+        # Printing the Split Details
+        print(cls,':')
+        print('Total images: ', len(allFileNames))
+        print('Training: ', len(train_FileNames))
+        print('Validation: ', len(val_FileNames))
+        print('Testing: ', len(test_FileNames))
+
+        # Copy-pasting images
+        for name in train_FileNames:
+            shutil.copy(name, 'training/' + cls)
+
+        for name in val_FileNames:
+            shutil.copy(name, 'validation/' + cls)
+
+        for name in test_FileNames:
+            shutil.copy(name, 'testing/' + cls)
+        print();
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># Preforming Train / Validation / Test Split
+root_dir = "./CervicalCancer"              
+# Dataset Root Folder
+classes_dir = ["Dyskeratotic", "Koilocytotic", "Metaplastic", "Parabasal", "Superficial-Intermediate"]   # Classes
+TrainValTestSplit(root_dir, classes_dir);
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/ce1.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<p>Code that initializes some variables and sets the paths to the cropped images for different cell types in a cervical cancer dataset. The compressed_img_size variable is set to 80, and the celltypes variable is a list of the different cell types. The path variable is a list of paths to the cropped images for each cell type.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>imgdata = []
+imgoutdata = []
+labels = []
+
+compressed_img_size = 80
+celltypes = ['im_Koilocytotic', 'im_Metaplastic', 'im_Dyskeratotic', 'im_Parabasal', 'im_Superficial-Intermediate']
+path = ["../input/cervical-cancer-largest-dataset-sipakmed/" + celltype  + "/" + celltype + "/CROPPED/" for celltype in celltypes]
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Code that processes the images in the cervical cancer dataset. The code loops through the different cell types and their corresponding images. For each image, it assigns a label based on the cell type, resizes the image to the specified compressed_img_size, applies median filtering and histogram equalization to the image, and appends the original and processed images to their respective lists.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>
+cur_label = -1
+for celltype in path:
+    cur_label += 1 
+    cellimages = os.listdir(celltype)
+    for cellimage in cellimages:
+        if cellimage.lower().endswith(".bmp"):
+            # Mark each cell with a cell type
+            labels.append(cur_label)
+            img = cv2.imread(celltype+cellimage)
+            img = np.array(Image.fromarray(img, 'RGB').resize((compressed_img_size, compressed_img_size)))
+            #if LOW_PASS_FILTER:
+            #    img = cv2.GaussianBlur(img, (3, 3), cv2.BORDER_DEFAULT)
+            #elif HIGH_PASS_FILTER:
+            #    img = img - cv2.GaussianBlur(img, (3, 3), cv2.BORDER_DEFAULT) + 127
+            img_median = cv2.medianBlur(img,5 ) # Add median filter to image
+            img_yuv = cv2.cvtColor(img_median, cv2.COLOR_BGR2YUV)
+
+            # equalize the histogram of the Y channel
+            img_yuv[:,:,0] = cv2.equalizeHist(img_yuv[:,:,0])
+
+            # convert the YUV image back to RGB format
+            img_output = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)
+            
+            imgdata.append(img)
+
+            imgoutdata.append(img_output)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>labels = np.array(labels)
+imgdata = np.array(imgdata)
+print(labels,imgdata)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+Function that displays an image from the cervical cancer dataset and its processed version. The function takes in one argument: i, which specifies the index of the image to display. The function creates a figure with two subplots: one for the original image and one for the processed image. It displays the images and their corresponding titles, which indicate the cell type and whether the image is filtered or not.
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>def show_the_image(i):
+    fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(10,4))
+    rows = 1
+    columns = 2
+    fig.add_subplot(rows, columns, 1)
+      
+    # showing image
+    plt.imshow(imgdata[i])
+    plt.axis('off')
+    plt.title(celltypes[labels[i]])
+                               
+    fig.add_subplot(rows, columns, 2)
+      
+    # showing image
+    plt.imshow(imgoutdata[i])
+    plt.axis('off')
+    plt.title("Filter "+celltypes[labels[i]])
+show_the_image(3)</code></pre>
+</div>
+</div>	
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/cervical.png" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>			
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>model_densenet = DenseNet201(weights = 'imagenet', include_top = False ,input_shape=(64,64,3))
+#model_nasnet = NASNetMobile(weights = 'imagenet', include_top = False)
+#model_mobilenet = MobileNetV2(weights = 'imagenet', include_top = False)
+#model_ıncepnet = InceptionResNetV2(weights = 'imagenet', include_top = False)
+#model_resnet = ResNet152V2(weights = 'imagenet', include_top = False)
+#model_vgg = VGG19(weights = 'imagenet', include_top = False)
+
+#features_nasnet = model_nasnet.predict(imgdata, batch_size=32)
+#features_densenet = model_densenet.predict(imgdata, batch_size=32)
+#features_mobilenet = model_mobilenet.predict(imgdata, batch_size=32)
+#features_ıncepnet = model_ıncepnet.predict(imgdata, batch_size=32)
+#features_resnet = model_resnet.predict(imgdata, batch_size=32)
+#features_vgg = model_vgg.predict(imgdata, batch_size=32)
+
+#print(features_densenet.shape)
+#print(features_nasnet.shape)
+#print(features_mobilenet.shape)
+#print(features_ıncepnet.shape)
+#print(features_resnet.shape)
+#print(features_vgg.shape)
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>Code that defines a neural network model using Keras. The model consists of a pre-trained DenseNet model followed by a Flatten layer, a Dense layer with 64 units and ReLU activation, a Dropout layer with a rate of 0.25, and a final Dense layer with 5 units and sigmoid activation. The model is compiled with the Adam optimizer, categorical cross-entropy loss, and accuracy metric. The model.summary() function is called to print a summary of the model architecture.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>model = Sequential() 
+model.add(model_densenet)
+model.add(Flatten())
+model.add(layers.Dense(units=64, activation='relu'))
+model.add(layers.Dropout(rate=0.25))
+model.add(layers.Dense(units=5, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']  )
+ 
+model.summary()
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<p>Code that uses the ImageDataGenerator class from Keras to augment the training data and rescale the pixel values of the training, validation, and testing data. The code creates three ImageDataGenerator objects with different settings for the training, validation, and testing data. Then, it uses the flow_from_directory method to create data generators for each dataset that load images from the specified directories and apply the specified transformations.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># Expand the size of dataset with new transformed images from the original dataset using ImageDataGenerator.
+train_datagen = image.ImageDataGenerator(zoom_range = 0.2, shear_range = 0.2 , rescale = 1./255 , horizontal_flip=True)
+val_datagen = image.ImageDataGenerator(rescale = 1./255)
+test_datagen = image.ImageDataGenerator(rescale = 1./255)
+
+train_data = train_datagen.flow_from_directory(directory= "./training", target_size=(64, 64), batch_size=100, class_mode = 'categorical')
+val_data = val_datagen.flow_from_directory(directory= "./validation", target_size=(64, 64), batch_size=100, class_mode = 'categorical')
+test_data = test_datagen.flow_from_directory(directory= "./testing", target_size=(64, 64), batch_size=100, class_mode = 'categorical')
+</code></pre>
+</div>
+</div>			
+
+<p>Code that defines two Keras callbacks: EarlyStopping and ModelCheckpoint. The EarlyStopping callback monitors the validation loss and stops training if it doesn’t improve for 2 epochs. The ModelCheckpoint callback monitors the validation accuracy and saves the best model to a file named best_model.h5.</p>
+<!-- End Pre Code -->
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>callbacks = [EarlyStopping(monitor='val_loss', patience=2),
+             ModelCheckpoint(filepath='best_model.h5', monitor='val_accuracy', save_best_only=True)]
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code># Fitting the Model
+cnn = model.fit(train_data, 
+                  steps_per_epoch= 28, 
+                  epochs= 80,
+                  validation_data= val_data, 
+                  validation_steps= 6,
+                  callbacks = call_back)</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<p>Code that evaluates the trained model on the testing data using the evaluate_generator method. The method takes in the test_data generator as an argument and returns the loss and accuracy values.</p>
+<!-- Start Pre Code -->			
+<div class="container-center">
+<div class="col-md-12-center">
+<pre><code>accuracy = model.evaluate_generator(generator= test_data)[1] 
+print(f"The accuracy of your model is = {accuracy*100} %")
+</code></pre>
+</div>
+</div>				
+<!-- End Pre Code -->
+<!-- Image Alignment -->
+<div class="container-center">
+	<div class="col-md-12-center">
+		<img src="images/images/ce2.PNG" alt="Images" class="fh5co-align-left img-responsive">
+	</div>
+</div>
+
+<div class="col-md-12" align="right"><a href="https://github.com/Reyhandede/CervicalCancerTransferLearning/blob/main/CercivalTransferLearning.ipynb" target="_blank">GitHub</a></div>
+
+		<div class="fh5co-spacer fh5co-spacer-xxs"></div>
+		<div id="fh5co-work">
+					<div class="col-md-6 col-sm-6 col-xs-6" align="left">
+						<a href="post_ds10.html" target="_self" >&#171; Previous</a>
+					</div>	
+
+					<div class="col-md-6 col-sm-6 col-xs-6" align="right">
+						<a href="post_ds8.html" target="_self">Next &#187;</a>
+					</div>	
+				</div>	
+			</div>	
+		</div>	
+
+
+
+		<div class="fh5co-spacer fh5co-spacer-md"></div>
+		<div class="fh5co-spacer fh5co-spacer-xs"></div>
+
+			
+		
+		<!-- Go To Top -->
+		<a href="#" class="fh5co-gotop"><i class="ti-shift-left"></i></a>
+
+
+
+
+
+
+
+
+
+		
+			
+		<!-- jQuery -->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.js"></script>
+		<!-- Owl carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		<!-- Magnific Popup -->
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<!-- Easy Responsive Tabs -->
+		<script src="js/easyResponsiveTabs.js"></script>
+		<!-- FastClick for Mobile/Tablets -->
+		<script src="js/fastclick.js"></script>
+		<!-- Velocity -->
+		<script src="js/velocity.min.js"></script>
+		
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+		<script src="js/google_map.js"></script>
+
+
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
