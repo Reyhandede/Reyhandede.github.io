@@ -854,6 +854,7 @@ pre {
   bottom: 0;
   width: 100%;
   text-align: center;
+  text-decoration:none
 }
 
 .owl-carousel-fullwidth.owl-theme .owl-dots {

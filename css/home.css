@@ -7,10 +7,6 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
 //////////////////////////////////////////////////////
 */
 
-*{
-  margin:0;
-  padding:0;
-}
 
 
 
@@ -513,7 +509,6 @@ pre {
 }
 #fh5co-footer .fh5co-footer-social {
   padding: 0;
-  margin: 0 0 2em 0;
 }
 #fh5co-footer .fh5co-footer-social li {
   display: inline;
@@ -525,7 +520,6 @@ pre {
 @media screen and (max-width: 480px) {
   #fh5co-footer .fh5co-footer-social li {
     display: block;
-    margin-bottom: 10px;
   }
 }
 #fh5co-footer .fh5co-footer-social li a {
@@ -675,6 +669,8 @@ pre {
   bottom: 0;
   width: 100%;
   text-align: center;
+  text-decoration:none
+
 }
 
 .owl-carousel-fullwidth.owl-theme .owl-dots {
@@ -1244,7 +1240,7 @@ hidden {
 .console-container {
  
   font-family:Roboto;
-  font-size:4em;
+  font-size:4vw;
   text-align:center;
   height:40%;
   width:100%;
@@ -1257,6 +1253,8 @@ hidden {
   right:0;
   margin:auto;
 }
+
+
 .console-underscore {
    display:inline-block;
   position:relative;
@@ -1286,12 +1284,12 @@ hidden {
 
 .navbar .nav-menu li {
   position: relative;
-  min-width: 200px;
+  min-width: 50px;
   text-align: right;
 }
 .navbar .nav-menu li .dot {
   display: block;
-  color: #fff;
+  color: black;
   padding: 5px 0;
 }
 .navbar .nav-menu li .dot::before,
@@ -1308,7 +1306,7 @@ hidden {
   width: 5px;
   height: 5px;
   right: 0;
-  border: 2px solid #4B0150;
+  border: 1px solid #4B0150;
   transform: translateY(-50%);
 }
 .navbar .nav-menu li .dot::after {
@@ -1316,14 +1314,14 @@ hidden {
 
   width: 15px;
   height: 15px;
-  border: 2px solid #4B0150;
+  border: 1px solid #4B0150;
   right: -5px;
   transform: translateY(-50%) scale(0);
 }
 .navbar .nav-menu li .dot.active::before,
 .navbar .nav-menu li:hover .dot::before {
-  background: #4B0150;
-  border-color: #4B0150;
+  background-color: transparent;
+  
 }
 .navbar .nav-menu li .dot.active::after,
 .navbar .nav-menu li:hover .dot::after {
@@ -1335,12 +1333,14 @@ hidden {
   font-weight: 700;
   letter-spacing: .5px;
   text-transform: capitalize;
-  background-color: #4B0150;
+  background-color: transparent;
   padding: 10px 20px;
   border-radius: 3px;
   margin-right: 30px;
   transform: translateX(20px);
   transition: all .3s ease;
+  border: 2px solid #4B0150;
+
 }
 .navbar .nav-menu li .dot span::before {
   display: block;
@@ -1359,6 +1359,16 @@ hidden {
   transform: translateX(0px);
   opacity: 1;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1475,7 +1485,6 @@ section
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10vh 10%;
 
 
   padding-top: var(--header-height);
@@ -1508,7 +1517,7 @@ section
   color: var(--black);
 }
 
-section.banner
+.banner
 {
   
   display: flex;
@@ -1525,7 +1534,6 @@ section.banner
 .banner-box
 {
   mix-blend-mode: difference;
-  padding: 0 0 0 100px;
   z-index: 1;
   align-self: flex-start;
   /*animation: ss 1s linear infinite alternate;*/
@@ -1536,5 +1544,17 @@ section.banner
 
 .banner .btn{
   margin-left: 2px;
+}
+
+
+.cont {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    filter: url(#goo);
+    width:100%;
+		height: 100vh;
 }
 
